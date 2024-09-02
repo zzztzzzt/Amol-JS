@@ -1,4 +1,4 @@
-# Amol-JS javascript 3D UI Library
+# Amol-JS
 
 ![logo](https://github.com/zzztzzzt/Amol-JS/blob/main/real-showcase.png)
 
