@@ -33,7 +33,7 @@ npx vite
 
 ```
 
-6. You'll see a URL in your terminal. open URL to see your web application.
+6. You'll see a URL in your terminal. You can open this URL in your browser.
 
 ## Usage Example
 
@@ -75,11 +75,17 @@ AMOL.animate();
 
 ## All Tools
 AMOL.create(Name, 3D-object-Name, color-type, view-offset)  
+
 AMOL.remove(Name)  
+
 AMOL.getValue(Name)  
+
 AMOL.setListener(Name, event, function)  
+
 AMOL.setPosition(Name, position-X, position-Y, position-Z)  
+
 AMOL.setScale(Name, scale)  
+
 AMOL.animate()  
 
 Name : name it whatever you want.  
