@@ -45,7 +45,7 @@ AMOL.animate();
 
 ```
 
-## ALL Tools
+## All Tools
 AMOL.create(Name, 3D-object-Name, color-type, view-offset)  
 AMOL.remove(Name)  
 AMOL.getValue(Name)  
@@ -53,8 +53,15 @@ AMOL.setListener(Name, event, function)
 AMOL.setPosition(Name, position-X, position-Y, position-Z)  
 AMOL.setScale(Name, scale)  
 AMOL.animate()  
+
 Name : name it whatever you want.  
 3D-object-Name : the form is like this : amol-"objectType"-"artVersion". for example, "amol-button-vanilla", "amol-cursor-trail-golden"...  
 
-The objectTypes we currently provide : button, input, cursor-trail, click-tracking  
-The artVersions we currently provide : vanilla, golden  
+### The objectTypes we currently provide :
+button  
+input  
+cursor-trail  
+click-tracking  
+### The artVersions we currently provide :
+vanilla  
+golden  
