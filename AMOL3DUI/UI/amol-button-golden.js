@@ -177,20 +177,20 @@ export class AmolButtonGolden {
         }
         
         function scaleGeometry(targetScale, speed) {
-            var initialScale = ring.scale.clone(); // initial scale
-            var initialScaleTwo = ringTwo.scale.clone();
-            var initialScaleThree = ringThree.scale.clone();
-            var duration = speed; // unit : ms
+            let initialScale = ring.scale.clone(); // initial scale
+            let initialScaleTwo = ringTwo.scale.clone();
+            let initialScaleThree = ringThree.scale.clone();
+            let duration = speed; // unit : ms
                     
-            var startTime = Date.now(); // record the start timing
+            let startTime = Date.now(); // record the start timing
                     
             function update() {
-                var now = Date.now(); // get the time from now
-                var elapsedTime = now - startTime; // calculate how much the time has past
+                let now = Date.now(); // get the time from now
+                let elapsedTime = now - startTime; // calculate how much the time has past
                         
                 if (elapsedTime < duration) {
                     // if time isnt reach the request, then keep update
-                    var t = elapsedTime / duration; // calculate the coefficients of interpolation. 0 to 1
+                    let t = elapsedTime / duration; // calculate the coefficients of interpolation. 0 to 1
                     ring.scale.lerpVectors(initialScale, targetScale, t); // interpolation using lerp function
                     ringTwo.scale.lerpVectors(initialScaleTwo, targetScale, t);
                     ringThree.scale.lerpVectors(initialScaleThree, targetScale, t);
