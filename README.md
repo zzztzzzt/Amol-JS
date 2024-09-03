@@ -7,7 +7,7 @@ IMPORTANT : This project is still in the development and testing stages. The cod
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)
 
-## usage
+## usage example
 
 ```javascript
 
