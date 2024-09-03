@@ -55,6 +55,7 @@ AMOL.setScale(Name, scale)
 AMOL.animate()  
 
 Name : name it whatever you want.  
+
 3D-object-Name : the form is like this : amol-"objectType"-"artVersion". for example, "amol-button-vanilla", "amol-cursor-trail-golden"...  
 
 ### The objectTypes we currently provide :
