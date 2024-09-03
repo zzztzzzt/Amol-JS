@@ -7,6 +7,20 @@ IMPORTANT : This project is still in the development and testing stages. The cod
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)
 
+## ALL Tools
+1. AMOL.create(Name, 3D-object-Name, color-type, view-offset)
+2. AMOL.remove(Name)
+3. AMOL.getValue(Name)
+4. AMOL.setListener(Name, event, function)
+5. AMOL.setPosition(Name, position-X, position-Y, position-Z)
+6. AMOL.setScale(Name, scale)
+7. AMOL.animate()
+Name : name it whatever you want.
+3D-object-Name : the form is like this : amol-"objectType"-"artVersion". for example, "amol-button-vanilla", "amol-cursor-trail-golden"...
+
+The objectTypes we currently provide : button, input, cursor-trail, click-tracking
+The artVersions we currently provide : vanilla, golden
+
 ## Usage Example
 
 ```javascript
