@@ -74,29 +74,31 @@ AMOL.animate();
 ```
 
 ## All Tools
-AMOL.create(Name, 3D-object-Name, color-type, view-offset)  
+AMOL.create(3D-object-Name, color-type, view-offset)
 
-AMOL.remove(Name)  
+getValue()
 
-AMOL.getValue(Name)  
+setListener(event, function)
 
-AMOL.setListener(Name, event, function)  
+setPosition(position-X, position-Y, position-Z)
 
-AMOL.setPosition(Name, position-X, position-Y, position-Z)  
+setScale(scale)
 
-AMOL.setScale(Name, scale)  
+removeSelf()
 
-AMOL.animate()  
+AMOL.animate() 
 
-Name : name it whatever you want.  
+### The Art Versions we currently provide :
+amol-button-vanilla
+amol-button-golden
+amol-button-thunder
 
-3D-object-Name : the form is like this : amol-"objectType"-"artVersion". for example, "amol-button-vanilla", "amol-cursor-trail-golden"...  
+amol-click-tracking-vanilla
+amol-click-tracking-golden
 
-### The objectTypes we currently provide :
-button  
-input  
-cursor-trail  
-click-tracking  
-### The artVersions we currently provide :
-vanilla  
-golden  
+amol-input-vanilla
+amol-input-golden
+amol-input-thunder
+
+amol-cursor-trail-vanilla
+amol-cursor-trail-golden
