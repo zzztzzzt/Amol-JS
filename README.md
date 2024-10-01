@@ -89,16 +89,16 @@ removeSelf()
 AMOL.animate() 
 
 ### The Art Versions we currently provide :
-amol-button-vanilla
-amol-button-golden
-amol-button-thunder
+amol-button-vanilla  
+amol-button-golden  
+amol-button-thunder  
 
-amol-click-tracking-vanilla
-amol-click-tracking-golden
+amol-click-tracking-vanilla  
+amol-click-tracking-golden  
 
-amol-input-vanilla
-amol-input-golden
-amol-input-thunder
+amol-input-vanilla  
+amol-input-golden  
+amol-input-thunder  
 
-amol-cursor-trail-vanilla
-amol-cursor-trail-golden
+amol-cursor-trail-vanilla  
+amol-cursor-trail-golden  
