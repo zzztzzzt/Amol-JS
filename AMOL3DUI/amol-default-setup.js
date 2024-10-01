@@ -65,23 +65,23 @@ function onMouseMove(event) {
     let mouse = new THREE.Vector2();
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    
+
     // update the start point and direction of the ray
     raycaster.setFromCamera(mouse, camera);
-    
+
     // detect intersection of ray and object
     let intersects = raycaster.intersectObjects(scene.children, true);
-    
+
     if (intersects.length > 0) {
         for (const key in objectList) {
             if (intersects[0].object.uuid === objectList[key].mainMesh.uuid) {
                 currentObject = objectList[key];
                 if (objectList[key].objectType != 'click-tracking' && objectList[key].objectType != 'input' && objectList[key].objectType != 'cursor-trail') document.body.style.cursor = 'pointer';
                 else document.body.style.cursor = 'auto';
-                
+
                 objectList[key].whenHover();
                 scanListForListener('hover', objectList[key]);
-                
+
                 break;
             }
             else {
@@ -131,16 +131,16 @@ scene.add(light);
 // 9.Animate
 function animate() {
     requestAnimationFrame(animate);
-    
+
     for (let i = 0; i < funcListForAnimate.length; i++) {
         funcListForAnimate[i]();
     }
-    
+
     light.position.x = Math.sin(Date.now() * 0.00025) * 10;
     light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
-    
+
     //controls.update();
-    
+
     renderer.render(scene, camera);
     cssRenderer.render(scene, camera);
 }
@@ -157,8 +157,8 @@ function removeMesh(object) {
     const meshes = object.getMeshes();
     for (const key in meshes) {
         scene.remove(meshes[key]);
-        meshes[key].geometry.dispose();
-        meshes[key].material.dispose();
+        if (meshes[key].geometry) meshes[key].geometry.dispose();
+        if (meshes[key].material) meshes[key].material.dispose();
     }
 }
 

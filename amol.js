@@ -7,82 +7,79 @@ import { AmolButtonVanilla } from './AMOL3DUI/UI/amol-button-vanilla';
 import { AmolClickTrackingVanilla } from './AMOL3DUI/UI/amol-click-tracking-vanilla';
 import { AmolInputVanilla } from './AMOL3DUI/UI/amol-input-vanilla';
 import { AmolCursorTrailVanilla } from './AMOL3DUI/UI/amol-cursor-trail-vanilla';
+import { AmolButtonThunder } from './AMOL3DUI/UI/amol-button-thunder';
+import { AmolInputThunder } from './AMOL3DUI/UI/amol-input-thunder';
 
 /*
 All Tools :
-AMOL.create(Name, 3D-object-Name, color-type, view-offset)
-AMOL.remove(Name)
-AMOL.getValue(Name)
-AMOL.setListener(Name, event, function)
-AMOL.setPosition(Name, position-X, position-Y, position-Z)
-AMOL.setScale(Name, scale)
+AMOL.create(3D-object-Name, color-type, view-offset)
+
+.getValue()
+.setListener(event, function)
+.setPosition(position-X, position-Y, position-Z)
+.setScale(scale)
+.removeSelf()
+
 AMOL.animate()
 */
 
-// 1.AMOL.create()
-export function create(name, objectName, colorType = 0, viewOffset = 'fix') {
-    if (objectName == 'amol-button-vanilla') {
-        let object = new AmolButtonVanilla(name, colorType, viewOffset);
-        addObject(object);
+let uniqueObjectID = 1;
+
+const objectMap = {
+    'amol-button-vanilla': AmolButtonVanilla,
+    'amol-button-golden': AmolButtonGolden,
+    'amol-button-thunder': AmolButtonThunder,
+    'amol-click-tracking-vanilla': AmolClickTrackingVanilla,
+    'amol-click-tracking-golden': AmolClickTrackingGolden,
+    'amol-input-vanilla': AmolInputVanilla,
+    'amol-input-golden': AmolInputGolden,
+    'amol-input-thunder': AmolInputThunder,
+    'amol-cursor-trail-vanilla': AmolCursorTrailVanilla,
+    'amol-cursor-trail-golden': AmolCursorTrailGolden,
+};
+
+class AmolObject {
+    constructor(name, objectName, colorType, viewOffset) {
+        this.name = name;
+        this.objectName = objectName;
+        this.colorType = colorType;
+        this.viewOffset = viewOffset;
+
+        const ObjectClass = objectMap[objectName];
+        if (ObjectClass) {
+            this.object = new ObjectClass(name, colorType, viewOffset);
+            addObject(this.object);
+        }
     }
-    if (objectName == 'amol-button-golden') {
-        let object = new AmolButtonGolden(name, colorType, viewOffset);
-        addObject(object);
+
+    getValue() {
+        return returnValue(this.name);
     }
-    if (objectName == 'amol-click-tracking-vanilla') {
-        let object = new AmolClickTrackingVanilla(name, colorType, viewOffset);
-        addObject(object);
+
+    setListener(event, func) {
+        addListener(event, func, this.name);
     }
-    if (objectName == 'amol-click-tracking-golden') {
-        let object = new AmolClickTrackingGolden(name, colorType, viewOffset);
-        addObject(object);
+
+    setPosition(posX = 0, posY = 0, posZ = 0) {
+        addPosition(posX, posY, posZ, this.name);
     }
-    if (objectName == 'amol-input-vanilla') {
-        let object = new AmolInputVanilla(name, colorType, viewOffset);
-        addObject(object);
+
+    setScale(scale = 1.0) {
+        addScale(scale, this.name);
     }
-    if (objectName == 'amol-input-golden') {
-        let object = new AmolInputGolden(name, colorType, viewOffset);
-        addObject(object);
-    }
-    if (objectName == 'amol-cursor-trail-vanilla') {
-        let object = new AmolCursorTrailVanilla(name, colorType, viewOffset);
-        addObject(object);
-    }
-    if (objectName == 'amol-cursor-trail-golden') {
-        let object = new AmolCursorTrailGolden(name, colorType, viewOffset);
-        addObject(object);
+
+    removeSelf() {
+        removeObject(this.name);
+        removeListener(this.name);
     }
 }
 
-// 2.AMOL.remove()
-export function remove(name) {
-    removeObject(name);
-    removeListener(name);
+export function create(objectName, colorType = 0, viewOffset = 'fix') {
+    uniqueObjectID++;
+    const name = `object-${uniqueObjectID}`;
+    return new AmolObject(name, objectName, colorType, viewOffset);
 }
 
-// 3.AMOL.getValue()
-export function getValue(name) {
-    const value = returnValue(name);
-    return value;
-}
-
-// 4.AMOL.setListener()
-export function setListener(name, event, func) {
-    addListener(event, func, name);
-}
-
-// 5.AMOL.setPosition()
-export function setPosition(name, posX = 0, posY = 0, posZ = 0) {
-    addPosition(posX, posY, posZ, name);
-}
-
-// 6.AMOL.setScale()
-export function setScale(name, scale = 1.0) {
-    addScale(scale, name);
-}
-
-// 7.AMOL.animate()
 export function animate() {
     animateAll();
 }
