@@ -42,31 +42,33 @@ npx vite
 // 1.Put "amol.js" and "AMOL3DUI folder" into your project folder
 import * as AMOL from './amol';
 
-const colorType = 1;
-const colorTypeTwo = 0;
-
 // effects
-AMOL.create('effect', 'amol-cursor-trail-vanilla', colorType);
-AMOL.create('effect2', 'amol-click-tracking-vanilla', colorType);
+const cursorTrail = AMOL.create('amol-cursor-trail-vanilla', 1);
+const clickTracking = AMOL.create('amol-click-tracking-vanilla', 0);
 
-// UI elements
-AMOL.create('myEle-one', 'amol-button-vanilla', colorType);
-AMOL.setScale('myEle-one', 0.8);
-AMOL.setPosition('myEle-one', -2, 0, 0);
+// input element
+const myInput = AMOL.create('amol-input-thunder', 0);
+myInput.setScale( 0.72 );
+myInput.setPosition( -1, 0, 0 );
 
-AMOL.create('myEle-two', 'amol-input-golden', colorTypeTwo);
-AMOL.setPosition('myEle-two', 2, 0, -2);
-
-// event listener
-function onClick() { console.log("You Click!"); }
-function onHover() { console.log("You Hover!"); }
-AMOL.setListener('myEle-one', 'click', onClick);
-AMOL.setListener('myEle-one', 'hover', onHover);
-
-// get input value
 setInterval(() => {
-    console.log( AMOL.getValue('myEle-two') );
+    console.log(`Hello : ${ myInput.getValue() }`);
 }, 500);
+
+// button element, with simple animate control
+const myButton = AMOL.create('amol-button-thunder', 0);
+let direction = 1;
+let currentX = 2;
+let currentY = 0;
+setInterval(() => {
+    myButton.setPosition( currentX, currentY, -2 );
+    if (currentX >= 4) direction = -1;
+    if (currentX <= 2.5) direction = 1;
+    currentX += 0.003 * direction;
+}, 10);
+
+myButton.setListener('click', () => { console.log('You click !'); });
+myButton.setListener('hover', () => { console.log('You hover !'); });
 
 // 2.Don't forget to use Animate Function at the end
 AMOL.animate();
