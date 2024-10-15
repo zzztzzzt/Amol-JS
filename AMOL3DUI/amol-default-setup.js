@@ -73,6 +73,9 @@ function onMouseMove(event) {
     let intersects = raycaster.intersectObjects(scene.children, true);
 
     if (intersects.length > 0) {
+        // prevent the program from not executing notHover() when intersects.length > 0
+        if (currentObject != null) currentObject.notHover();
+
         for (const key in objectList) {
             if (intersects[0].object.uuid === objectList[key].mainMesh.uuid) {
                 currentObject = objectList[key];
@@ -126,7 +129,7 @@ light.position.set(0, 5, 0);
 scene.add(light);
 
 // 8.Orbit Controls
-//const controls = new OrbitControls(camera, cssRenderer.domElement);
+const controls = new OrbitControls(camera, cssRenderer.domElement);
 
 // 9.Animate
 function animate() {
@@ -139,7 +142,7 @@ function animate() {
     light.position.x = Math.sin(Date.now() * 0.00025) * 10;
     light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
 
-    //controls.update();
+    controls.update();
 
     renderer.render(scene, camera);
     cssRenderer.render(scene, camera);
