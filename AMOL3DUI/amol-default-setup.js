@@ -129,7 +129,7 @@ light.position.set(0, 5, 0);
 scene.add(light);
 
 // 8.Orbit Controls
-const controls = new OrbitControls(camera, cssRenderer.domElement);
+//const controls = new OrbitControls(camera, cssRenderer.domElement);
 
 // 9.Animate
 function animate() {
@@ -142,7 +142,7 @@ function animate() {
     light.position.x = Math.sin(Date.now() * 0.00025) * 10;
     light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
 
-    controls.update();
+    //controls.update();
 
     renderer.render(scene, camera);
     cssRenderer.render(scene, camera);
