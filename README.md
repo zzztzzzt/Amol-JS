@@ -83,7 +83,10 @@ setPosition(position-X, position-Y, position-Z)
 setScale(scale)  
 removeSelf()  
 
-AMOL.animate() 
+AMOL.animate()  
+AMOL.cameraSpeed(speed-X, speed-Y, speed-Z)  
+AMOL.stopCamera()  
+AMOL.virtualScene(z-index, width, height, top, left)  
 
 ### The Art Versions we currently provide :
 amol-button-vanilla  
