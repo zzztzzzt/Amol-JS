@@ -25,6 +25,7 @@ AMOL.create(3D-object-Name, color-type, view-offset)
 AMOL.animate()
 AMOL.cameraSpeed(speed-X, speed-Y, speed-Z)
 AMOL.stopCamera()
+AMOL.virtualScene(z-index, width, height, top, left)
 */
 
 let uniqueObjectID = 1;
