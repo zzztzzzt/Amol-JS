@@ -94,6 +94,7 @@ AMOL.animate()
 amol-button-vanilla  
 amol-button-golden  
 amol-button-thunder  
+amol-button-ripple  
 
 amol-click-tracking-vanilla  
 amol-click-tracking-golden  
@@ -104,3 +105,4 @@ amol-input-thunder
 
 amol-cursor-trail-vanilla  
 amol-cursor-trail-golden  
+amol-cursor-trail-ripple  
