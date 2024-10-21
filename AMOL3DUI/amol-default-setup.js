@@ -27,6 +27,8 @@ const objectList = [];
 const listForListener = [];
 const funcListForAnimate = [];
 let currentObject = null;
+let cameraLock = true;
+let cameraSpeedArr = [0, 0, 0];
 
 class ListenerFunc {
     constructor(eventName, func, name) {
@@ -143,6 +145,11 @@ function animate() {
     light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
 
     //controls.update();
+    if (!cameraLock) {
+        camera.position.x += cameraSpeedArr[0];
+        camera.position.y += cameraSpeedArr[1];
+        camera.position.z += cameraSpeedArr[2];
+    }
 
     renderer.render(scene, camera);
     cssRenderer.render(scene, camera);
@@ -236,4 +243,15 @@ export function addScale(scale, objectName) {
 
 export function animateAll() {
     animate();
+}
+
+export function cameraSpeed(speedX, speedY, speedZ) {
+    cameraLock = false;
+    cameraSpeedArr[0] = speedX;
+    cameraSpeedArr[1] = speedY;
+    cameraSpeedArr[2] = speedZ;
+}
+
+export function stopCamera() {
+    cameraLock = true;
 }

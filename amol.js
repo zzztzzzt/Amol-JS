@@ -1,4 +1,4 @@
-import { addObject, removeObject, returnValue, addListener, removeListener, addPosition, addScale, animateAll } from './AMOL3DUI/amol-default-setup';
+import { addObject, removeObject, returnValue, addListener, removeListener, addPosition, addScale, animateAll, cameraSpeed, stopCamera } from './AMOL3DUI/amol-default-setup';
 import { AdditionalScene } from './AMOL3DUI/amol-additional-scene';
 import { AmolButtonGolden } from './AMOL3DUI/UI/amol-button-golden';
 import { AmolClickTrackingGolden } from './AMOL3DUI/UI/amol-click-tracking-golden';
@@ -16,7 +16,6 @@ import { AmolCursorTrailRipple } from './AMOL3DUI/UI/amol-cursor-trail-ripple';
 /*
 All Tools :
 AMOL.create(3D-object-Name, color-type, view-offset)
-
 .getValue()
 .setListener(event, function)
 .setPosition(position-X, position-Y, position-Z)
@@ -24,6 +23,8 @@ AMOL.create(3D-object-Name, color-type, view-offset)
 .removeSelf()
 
 AMOL.animate()
+AMOL.cameraSpeed(speed-X, speed-Y, speed-Z)
+AMOL.stopCamera()
 */
 
 let uniqueObjectID = 1;
@@ -88,6 +89,10 @@ export function create(objectName, colorType = 0, viewOffset = 'fix') {
 export function animate() {
     animateAll();
 }
+
+export { cameraSpeed };
+
+export { stopCamera };
 
 // Virtual Scene Area
 let uniqueDivName = 1;

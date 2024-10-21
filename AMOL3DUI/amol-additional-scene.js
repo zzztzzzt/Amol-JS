@@ -82,7 +82,7 @@ export class AdditionalScene {
                     if (intersects[0].object.uuid === objectList[key].mainMesh.uuid) {
                         currentObject = objectList[key];
                         if (objectList[key].objectType != 'click-tracking' && objectList[key].objectType != 'input' && objectList[key].objectType != 'cursor-trail') document.body.style.cursor = 'pointer';
-                        else document.body.style.cursor = 'auto';
+                        //else document.body.style.cursor = 'auto';
 
                         objectList[key].whenHover();
                         scanListForListener('hover', objectList[key]);
@@ -91,7 +91,7 @@ export class AdditionalScene {
                     }
                     else {
                         objectList[key].notHover();
-                        document.body.style.cursor = 'auto';
+                        //document.body.style.cursor = 'auto';
                     }
                 }
             }
