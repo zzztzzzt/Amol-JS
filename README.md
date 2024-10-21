@@ -76,17 +76,12 @@ AMOL.animate();
 ```
 
 ## All Tools
-AMOL.create(3D-object-Name, color-type, view-offset)
-
-getValue()
-
-setListener(event, function)
-
-setPosition(position-X, position-Y, position-Z)
-
-setScale(scale)
-
-removeSelf()
+AMOL.create(3D-object-Name, color-type, view-offset)  
+getValue()  
+setListener(event, function)  
+setPosition(position-X, position-Y, position-Z)  
+setScale(scale)  
+removeSelf()  
 
 AMOL.animate() 
 
