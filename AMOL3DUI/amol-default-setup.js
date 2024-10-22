@@ -122,6 +122,8 @@ function onClick(event) {
 }
 document.addEventListener('click', onClick, false);
 
+window.addEventListener('resize', onWindowResize);
+
 // 7.Light
 const ambientLight = new THREE.AmbientLight(0xffffff, 3);
 scene.add(ambientLight);
@@ -191,6 +193,14 @@ function scanListForListener(eventName, object) {
     for (const key in listForListener) {
         if (listForListener[key].eventName === eventName && listForListener[key].name === object.name) listForListener[key].func();
     }
+}
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    cssRenderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 // 11.Export
