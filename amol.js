@@ -1,4 +1,4 @@
-import { addObject, removeObject, returnValue, addListener, removeListener, addPosition, addScale, animateAll, cameraSpeed, stopCamera } from './AMOL3DUI/amol-default-setup';
+import { addObject, removeObject, returnValue, addListener, removeListener, addPosition, addScale, animateAll, cameraSpeed, stopCamera, stopCameraAt } from './AMOL3DUI/amol-default-setup';
 import { AdditionalScene } from './AMOL3DUI/amol-additional-scene';
 import { AmolButtonGolden } from './AMOL3DUI/UI/amol-button-golden';
 import { AmolClickTrackingGolden } from './AMOL3DUI/UI/amol-click-tracking-golden';
@@ -25,6 +25,7 @@ AMOL.create(3D-object-Name, color-type, view-offset)
 AMOL.animate()
 AMOL.cameraSpeed(speed-X, speed-Y, speed-Z)
 AMOL.stopCamera()
+AMOL.stopCameraAt(position-X, position-Y, position-Z)
 AMOL.virtualScene(z-index, width, height, top, left)
 */
 
@@ -94,6 +95,8 @@ export function animate() {
 export { cameraSpeed };
 
 export { stopCamera };
+
+export { stopCameraAt };
 
 // Virtual Scene Area
 let uniqueDivName = 1;
