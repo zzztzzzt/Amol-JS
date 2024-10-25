@@ -31,7 +31,7 @@ npx vite
 
 ```
 
-## Usage Example
+## Example Code
 
 ```javascript
 
