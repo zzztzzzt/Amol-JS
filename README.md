@@ -24,7 +24,7 @@ npm install --save-dev vite
 
 ```
 
-**For quick use** just run "npx vite" in terminal and then open the URL that Vite gives you, **ignore the 3. 4. 5. 6. step below**.
+Run "npx vite" in terminal and then open the URL that Vite gives you.
 ```cmd
 
 npx vite
