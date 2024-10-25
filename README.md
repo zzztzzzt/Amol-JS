@@ -31,7 +31,7 @@ npx vite
 
 ```
 
-### Use in other project (for quick use ignore this)
+### Use in Other Project ( for quick use ignore this )
 1. Install Node.js and git clone this project.
 
 2. Install Three.js and Vite using terminal in your project folder.
