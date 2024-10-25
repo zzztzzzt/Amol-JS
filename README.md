@@ -22,6 +22,14 @@ npm install --save-dev vite
 
 ```
 
+**For quick use** just run "npx vite" in terminal and then open the URL that Vite gives you, **ignore the 3. 4. 5. 6. step below**.
+```cmd
+
+npx vite
+
+```
+
+### Use in other project (for quick use ignore this)
 3. Put "amol.js" and "AMOL3DUI folder" into your project folder.
 
 4. Create "index.html" and your JS files.
