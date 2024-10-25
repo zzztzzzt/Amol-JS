@@ -8,6 +8,8 @@ Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)
 
 ## How To Use
+
+### Quick Use
 1. Install Node.js.
 
 2. Install Three.js and Vite using terminal in your project folder.
