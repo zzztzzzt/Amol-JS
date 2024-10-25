@@ -105,3 +105,7 @@ amol-input-thunder
 amol-cursor-trail-vanilla  
 amol-cursor-trail-golden  
 amol-cursor-trail-ripple  
+
+## Old Versions
+
+![1.0logo](https://github.com/zzztzzzt/Amol-JS/blob/main/real-showcase.png)
