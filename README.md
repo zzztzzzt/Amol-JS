@@ -9,7 +9,7 @@ Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https:/
 
 ## How To Use
 
-### Quick Use - No Need Coding!
+### Quick Use - No Need Coding !
 1. Install Node.js and git clone this project.
 
 2. Install Three.js and Vite using terminal in this project folder.
