@@ -35,39 +35,46 @@ npx vite
 
 ```javascript
 
-// 1.Put "amol.js" and "AMOL3DUI folder" into your project folder
 import * as AMOL from './amol';
 
-// effects
-const cursorTrail = AMOL.create('amol-cursor-trail-vanilla', 1);
-const clickTracking = AMOL.create('amol-click-tracking-vanilla', 0);
+const myEffect = AMOL.create('amol-cursor-trail-ripple', 1);
 
-// input element
-const myInput = AMOL.create('amol-input-thunder', 0);
-myInput.setScale( 0.72 );
-myInput.setPosition( -1, 0, 0 );
+const btn1 = AMOL.create('amol-button-thunder', 0, 'none');
+btn1.setPosition(1.8, -1.8, 0);
+btn1.setScale(1.2);
+let nextMove = 'up';
+btn1.setListener('click', () => {
+    if (nextMove == 'up') {
+        btn1.setPosition(1.8, 1.8, 0);
+        nextMove = 'down';
+    }
+    else {
+        btn1.setPosition(1.8, -1.8, 0);
+        nextMove = 'up';
+    }
+});
 
-setInterval(() => {
-    console.log(`Hello : ${ myInput.getValue() }`);
-}, 500);
-
-// button element, with simple animate control
-const myButton = AMOL.create('amol-button-thunder', 0);
-let direction = 1;
-let currentX = 2;
-let currentY = 0;
-setInterval(() => {
-    myButton.setPosition( currentX, currentY, -2 );
-    if (currentX >= 4) direction = -1;
-    if (currentX <= 2.5) direction = 1;
-    currentX += 0.003 * direction;
-}, 10);
-
-myButton.setListener('click', () => { console.log('You click !'); });
-myButton.setListener('hover', () => { console.log('You hover !'); });
-
-// 2.Don't forget to use Animate Function at the end
 AMOL.animate();
+
+const myScene = AMOL.virtualScene(2, 400, 400, 0, 22);
+
+const btn2 = myScene.create('amol-button-vanilla', 0);
+btn2.setScale(1.5);
+let nextStatus = 'go';
+btn2.setListener('click', () => {
+    if (nextStatus == 'go') {
+        AMOL.cameraSpeed(0, 0, -0.1);
+        setTimeout(() => { AMOL.stopCamera(); }, 1000);
+        nextStatus = 'back';
+    }
+    else {
+        AMOL.cameraSpeed(0, 0, 0.1);
+        AMOL.stopCameraAt(0, 0, 20);
+        nextStatus = 'go';
+    }
+});
+
+myScene.animate();
 
 ```
 
