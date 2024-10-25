@@ -5,7 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 // 1.Variables
 const canvas = document.createElement('div');
 canvas.id = 'canvas-container';
-canvas.style.zIndex = '-1';
+//canvas.style.zIndex = '-1';
 canvas.style.width = '100%';
 canvas.style.height = '100%';
 canvas.style.position = 'absolute';
@@ -15,7 +15,7 @@ document.body.appendChild(canvas);
 
 const canvasTwo = document.createElement('div');
 canvasTwo.id = 'canvas-container-two';
-canvasTwo.style.zIndex = '-1';
+//canvasTwo.style.zIndex = '-1';
 canvasTwo.style.width = '100%';
 canvasTwo.style.height = '100%';
 canvasTwo.style.position = 'absolute';
