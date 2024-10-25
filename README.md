@@ -24,7 +24,7 @@ npm install --save-dev vite
 
 ```
 
-Run "npx vite" in terminal and then open the URL that Vite gives you.
+3. Run "npx vite" in terminal and then open the URL that Vite gives you.
 ```cmd
 
 npx vite
@@ -32,6 +32,20 @@ npx vite
 ```
 
 ### Use in other project (for quick use ignore this)
+1. Install Node.js and git clone this project.
+
+2. Install Three.js and Vite using terminal in your project folder.
+```cmd
+
+npm install --save three
+
+```
+```cmd
+
+npm install --save-dev vite
+
+```
+
 3. Put "amol.js" and "AMOL3DUI folder" into your project folder.
 
 4. Create "index.html" and your JS files.
