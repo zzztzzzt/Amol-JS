@@ -32,8 +32,8 @@ let cameraSpeedArr = [0, 0, 0];
 let startCheckCamera = false;
 let cameraStopPoint = [0, 0, 0];
 
-let fps = 120;
-let frameDuration = 1000 / fps;
+let maxFps = 60;
+let frameDelay = 1000 / maxFps;
 let lastFrameTime = 0;
 
 class ListenerFunc {
@@ -143,10 +143,8 @@ scene.add(light);
 
 // 9.Animate
 function animate(time) {
-    requestAnimationFrame(animate);
-
-    if (time - lastFrameTime >= frameDuration) {
-        lastFrameTime = time;
+    if (time - lastFrameTime >= frameDelay) {
+        lastFrameTime = time - (time - lastFrameTime) % frameDelay;
 
         for (let i = 0; i < funcListForAnimate.length; i++) {
             funcListForAnimate[i]();
@@ -173,6 +171,8 @@ function animate(time) {
         renderer.render(scene, camera);
         cssRenderer.render(scene, camera);
     }
+
+    requestAnimationFrame(animate);
 }
 
 // 10.Function

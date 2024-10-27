@@ -30,8 +30,8 @@ export class AdditionalScene {
         const funcListForAnimate = [];
         let currentObject = null;
 
-        let fps = 120;
-        let frameDuration = 1000 / fps;
+        let maxFps = 60;
+        let frameDelay = 1000 / maxFps;
         let lastFrameTime = 0;
 
         class ListenerFunc {
@@ -141,10 +141,8 @@ export class AdditionalScene {
 
         // 9.Animate
         function animate(time) {
-            requestAnimationFrame(animate);
-
-            if (time - lastFrameTime >= frameDuration) {
-                lastFrameTime = time;
+            if (time - lastFrameTime >= frameDelay) {
+                lastFrameTime = time - (time - lastFrameTime) % frameDelay;
 
                 for (let i = 0; i < funcListForAnimate.length; i++) {
                     funcListForAnimate[i]();
@@ -158,6 +156,8 @@ export class AdditionalScene {
                 renderer.render(scene, camera);
                 cssRenderer.render(scene, camera);
             }
+
+            requestAnimationFrame(animate);
         }
 
         // 10.Function
