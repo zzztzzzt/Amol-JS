@@ -30,7 +30,7 @@ export class AdditionalScene {
         const funcListForAnimate = [];
         let currentObject = null;
 
-        let fps = 120;
+        let fps = 60;
         let frameDuration = 1000 / fps;
         let lastFrameTime = 0;
 
