@@ -1,17 +1,17 @@
-import { addObject, removeObject, returnValue, addListener, removeListener, addPosition, addScale, animateAll, cameraSpeed, stopCamera, stopCameraAt } from './AMOL3DUI/amol-default-setup';
-import { AdditionalScene } from './AMOL3DUI/amol-additional-scene';
-import { AmolButtonGolden } from './AMOL3DUI/UI/amol-button-golden';
-import { AmolClickTrackingGolden } from './AMOL3DUI/UI/amol-click-tracking-golden';
-import { AmolInputGolden } from './AMOL3DUI/UI/amol-input-golden';
-import { AmolCursorTrailGolden } from './AMOL3DUI/UI/amol-cursor-trail-golden';
-import { AmolButtonVanilla } from './AMOL3DUI/UI/amol-button-vanilla';
-import { AmolClickTrackingVanilla } from './AMOL3DUI/UI/amol-click-tracking-vanilla';
-import { AmolInputVanilla } from './AMOL3DUI/UI/amol-input-vanilla';
-import { AmolCursorTrailVanilla } from './AMOL3DUI/UI/amol-cursor-trail-vanilla';
-import { AmolButtonThunder } from './AMOL3DUI/UI/amol-button-thunder';
-import { AmolInputThunder } from './AMOL3DUI/UI/amol-input-thunder';
-import { AmolButtonRipple } from './AMOL3DUI/UI/amol-button-ripple';
-import { AmolCursorTrailRipple } from './AMOL3DUI/UI/amol-cursor-trail-ripple';
+import { addObject, removeObject, returnValue, addListener, removeListener, addPosition, addScale, animateAll, cameraSpeed, stopCamera, stopCameraAt } from './AMOL3DUI/legacy/amol-default-setup';
+import { AdditionalScene } from './AMOL3DUI/legacy/amol-additional-scene';
+import { AmolButtonGolden } from './AMOL3DUI/legacy/UI/amol-button-golden';
+import { AmolClickTrackingGolden } from './AMOL3DUI/legacy/UI/amol-click-tracking-golden';
+import { AmolInputGolden } from './AMOL3DUI/legacy/UI/amol-input-golden';
+import { AmolCursorTrailGolden } from './AMOL3DUI/legacy/UI/amol-cursor-trail-golden';
+import { AmolButtonVanilla } from './AMOL3DUI/legacy/UI/amol-button-vanilla';
+import { AmolClickTrackingVanilla } from './AMOL3DUI/legacy/UI/amol-click-tracking-vanilla';
+import { AmolInputVanilla } from './AMOL3DUI/legacy/UI/amol-input-vanilla';
+import { AmolCursorTrailVanilla } from './AMOL3DUI/legacy/UI/amol-cursor-trail-vanilla';
+import { AmolButtonThunder } from './AMOL3DUI/legacy/UI/amol-button-thunder';
+import { AmolInputThunder } from './AMOL3DUI/legacy/UI/amol-input-thunder';
+import { AmolButtonRipple } from './AMOL3DUI/legacy/UI/amol-button-ripple';
+import { AmolCursorTrailRipple } from './AMOL3DUI/legacy/UI/amol-cursor-trail-ripple';
 
 /*
 All Tools :
