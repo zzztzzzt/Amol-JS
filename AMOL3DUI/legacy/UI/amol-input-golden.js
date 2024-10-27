@@ -12,8 +12,8 @@ export class AmolInputGolden {
         let positionNum = [0, 0, 0];
         let scaleNum = 1.0;
         let chooseColor = color;
-        const colorTypeOne = ['./AMOL3DUI/UI/water-one.jpg', 'rgba(255, 200, 150, 0.3)'];
-        const colorTypeTwo = ['./AMOL3DUI/UI/water-two.jpg', 'rgba(117, 245, 229, 0.25)'];
+        const colorTypeOne = ['./AMOL3DUI/legacy/UI/water-one.jpg', 'rgba(255, 200, 150, 0.3)'];
+        const colorTypeTwo = ['./AMOL3DUI/legacy/UI/water-two.jpg', 'rgba(117, 245, 229, 0.25)'];
         const colorTypeThree = [];
         const colorList = [colorTypeOne, colorTypeTwo, colorTypeThree];
 

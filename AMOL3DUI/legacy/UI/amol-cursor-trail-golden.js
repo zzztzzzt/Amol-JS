@@ -11,8 +11,8 @@ export class AmolCursorTrailGolden {
         let positionNum = [0, 0, 0];
         let scaleNum = 1.0;
         let chooseColor = color;
-        const colorTypeOne = [0x000000, "./AMOL3DUI/UI/moon-one.png", "./AMOL3DUI/UI/moon-two.png", "./AMOL3DUI/UI/moon-three.png"];
-        const colorTypeTwo = [0x000000, "./AMOL3DUI/UI/moon-four.png", "./AMOL3DUI/UI/moon-five.png", "./AMOL3DUI/UI/moon-six.png"];
+        const colorTypeOne = [0x000000, "./AMOL3DUI/legacy/UI/moon-one.png", "./AMOL3DUI/legacy/UI/moon-two.png", "./AMOL3DUI/legacy/UI/moon-three.png"];
+        const colorTypeTwo = [0x000000, "./AMOL3DUI/legacy/UI/moon-four.png", "./AMOL3DUI/legacy/UI/moon-five.png", "./AMOL3DUI/legacy/UI/moon-six.png"];
         const colorTypeThree = [];
         const colorList = [colorTypeOne, colorTypeTwo, colorTypeThree];
 
