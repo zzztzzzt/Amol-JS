@@ -32,6 +32,10 @@ let cameraSpeedArr = [0, 0, 0];
 let startCheckCamera = false;
 let cameraStopPoint = [0, 0, 0];
 
+let fps = 120;
+let frameDuration = 1000 / fps;
+let lastFrameTime = 0;
+
 class ListenerFunc {
     constructor(eventName, func, name) {
         this.eventName = eventName;
@@ -138,33 +142,37 @@ scene.add(light);
 //const controls = new OrbitControls(camera, cssRenderer.domElement);
 
 // 9.Animate
-function animate() {
+function animate(time) {
     requestAnimationFrame(animate);
 
-    for (let i = 0; i < funcListForAnimate.length; i++) {
-        funcListForAnimate[i]();
-    }
+    if (time - lastFrameTime >= frameDuration) {
+        lastFrameTime = time;
 
-    light.position.x = Math.sin(Date.now() * 0.00025) * 10;
-    light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
-
-    //controls.update();
-
-    if (!cameraLock) {
-        camera.position.x += cameraSpeedArr[0];
-        camera.position.y += cameraSpeedArr[1];
-        camera.position.z += cameraSpeedArr[2];
-    }
-
-    if (startCheckCamera) {
-        if (camera.position.x == cameraStopPoint[0] && camera.position.y == cameraStopPoint[1] && camera.position.z == cameraStopPoint[2]) {
-            cameraLock = true;
-            startCheckCamera = false;
+        for (let i = 0; i < funcListForAnimate.length; i++) {
+            funcListForAnimate[i]();
         }
-    }
 
-    renderer.render(scene, camera);
-    cssRenderer.render(scene, camera);
+        light.position.x = Math.sin(Date.now() * 0.00025) * 10;
+        light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
+
+        //controls.update();
+
+        if (!cameraLock) {
+            camera.position.x += cameraSpeedArr[0];
+            camera.position.y += cameraSpeedArr[1];
+            camera.position.z += cameraSpeedArr[2];
+        }
+
+        if (startCheckCamera) {
+            if (camera.position.x == cameraStopPoint[0] && camera.position.y == cameraStopPoint[1] && camera.position.z == cameraStopPoint[2]) {
+                cameraLock = true;
+                startCheckCamera = false;
+            }
+        }
+
+        renderer.render(scene, camera);
+        cssRenderer.render(scene, camera);
+    }
 }
 
 // 10.Function

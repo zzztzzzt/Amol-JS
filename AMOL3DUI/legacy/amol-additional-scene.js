@@ -30,6 +30,10 @@ export class AdditionalScene {
         const funcListForAnimate = [];
         let currentObject = null;
 
+        let fps = 120;
+        let frameDuration = 1000 / fps;
+        let lastFrameTime = 0;
+
         class ListenerFunc {
             constructor(eventName, func, name) {
                 this.eventName = eventName;
@@ -136,20 +140,24 @@ export class AdditionalScene {
         //const controls = new OrbitControls(camera, cssRenderer.domElement);
 
         // 9.Animate
-        function animate() {
+        function animate(time) {
             requestAnimationFrame(animate);
 
-            for (let i = 0; i < funcListForAnimate.length; i++) {
-                funcListForAnimate[i]();
+            if (time - lastFrameTime >= frameDuration) {
+                lastFrameTime = time;
+
+                for (let i = 0; i < funcListForAnimate.length; i++) {
+                    funcListForAnimate[i]();
+                }
+
+                light.position.x = Math.sin(Date.now() * 0.00025) * 10;
+                light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
+
+                //controls.update();
+
+                renderer.render(scene, camera);
+                cssRenderer.render(scene, camera);
             }
-
-            light.position.x = Math.sin(Date.now() * 0.00025) * 10;
-            light.position.z = Math.abs(Math.cos(Date.now() * 0.00025)) * 10;
-
-            //controls.update();
-
-            renderer.render(scene, camera);
-            cssRenderer.render(scene, camera);
         }
 
         // 10.Function
