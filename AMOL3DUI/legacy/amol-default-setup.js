@@ -32,7 +32,7 @@ let cameraSpeedArr = [0, 0, 0];
 let startCheckCamera = false;
 let cameraStopPoint = [0, 0, 0];
 
-let fps = 60;
+let fps = 120;
 let frameDuration = 1000 / fps;
 let lastFrameTime = 0;
 
