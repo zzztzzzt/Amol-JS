@@ -71,7 +71,7 @@ export class MovieForgotten {
         // 5.Mesh
         const loader = new GLTFLoader();
         let model, model2, model3, model4, model5;
-        loader.load('stone-one.glb', (gltf) => {
+        loader.load('AMOL3DUI/legacy/stone-one.glb', (gltf) => {
             model = gltf.scene;
             scene.add(model);
             model.position.set(-3.5, -1, 0);
@@ -80,7 +80,7 @@ export class MovieForgotten {
             console.error(error);
         });
 
-        loader.load('stone-one.glb', (gltf) => {
+        loader.load('AMOL3DUI/legacy/stone-one.glb', (gltf) => {
             model2 = gltf.scene;
             scene.add(model2);
             model2.position.set(3.5, -1, 0);
@@ -89,7 +89,7 @@ export class MovieForgotten {
             console.error(error);
         });
 
-        loader.load('stone-one.glb', (gltf) => {
+        loader.load('AMOL3DUI/legacy/stone-one.glb', (gltf) => {
             model3 = gltf.scene;
             scene.add(model3);
             model3.position.set(-2.5, -1, -10);
@@ -98,7 +98,7 @@ export class MovieForgotten {
             console.error(error);
         });
 
-        loader.load('stone-one.glb', (gltf) => {
+        loader.load('AMOL3DUI/legacy/stone-one.glb', (gltf) => {
             model4 = gltf.scene;
             scene.add(model4);
             model4.position.set(2.5, -1, -10);
@@ -107,7 +107,7 @@ export class MovieForgotten {
             console.error(error);
         });
 
-        loader.load('dragon-one.glb', (gltf) => {
+        loader.load('AMOL3DUI/legacy/dragon-one.glb', (gltf) => {
             model5 = gltf.scene;
             scene.add(model5);
             model5.scale.set(0.4, 0.4, 0.4);
@@ -132,7 +132,7 @@ export class MovieForgotten {
         scene.add( groundMirror );
 
         let ceilingGeometry = new THREE.CircleGeometry( 500, 64 );
-        const texture = new THREE.TextureLoader().load('white-texture.png', function (texture) {
+        const texture = new THREE.TextureLoader().load('AMOL3DUI/legacy/white-texture-one.png', function (texture) {
             let ceilingMaterial = new THREE.MeshBasicMaterial({ map: texture });
             let ceiling = new THREE.Mesh(ceilingGeometry, ceilingMaterial);
             ceiling.position.y = 30;
