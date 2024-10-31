@@ -138,6 +138,8 @@ amol-cursor-trail-vanilla
 amol-cursor-trail-golden  
 amol-cursor-trail-ripple  
 
+amol-movie-forgotten  
+
 ## Old Versions 1.1
 ![1.1logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.png)
 
