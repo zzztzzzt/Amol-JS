@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web App 3D</title>
+    <title>AMOL App</title>
     <style>
         body {
             background-image: url('logo/amoljs.jpg');
-            background-size: 70%;
+            background-size: 36%;
             background-repeat: no-repeat;
             background-position: center;
             height: 100vh;
@@ -15,67 +15,14 @@
             overflow: hidden;
         }
 
-        @keyframes gradientAnimation {
-            0%, 100% {
-                background-size: 100%;
-            }
-            10%, 90% {
-                background-size: 130%;
-            }
-            20%, 80% {
-                background-size: 160%;
-            }
-            30%, 70% {
-                background-size: 190%;
-            }
-            40%, 60% {
-                background-size: 210%;
-            }
-            50% {
-                background-size: 240%;
-            }
-        }
-
-        .follow-card {
-            background: linear-gradient(135deg, rgba(176, 226, 255, 0.6), rgba(226, 176, 255, 0.6));
-            border-radius: 10px;
-            height: 70%;
-            width: auto;
-            aspect-ratio: 1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            transition: transform 2s;
-        }
-
-        .follow-card:hover {
-            transform: translate(-50%, -50%) scale(1.05);
-            animation: gradientAnimation 2s;
-        }
-
-        @media (max-width: 600px) {
-            .follow-card {
-                height: auto;
-                width: 70%;
-                max-width: 70%;
-            }
-        }
-        @media (min-width: 601px) and (max-width: 768px) {
-            .follow-card {
-                height: auto;
-                width: 70%;
-                max-width: 70%;
-            }
-        }
+        @media (max-width: 600px) {}
+        @media (min-width: 601px) and (max-width: 768px) {}
         @media (min-width: 769px) and (max-width: 900px) {}
         @media (min-width: 901px) and (max-width: 1024px) {}
         @media (min-width: 1025px) {}
     </style>
 </head>
 <body>
-    <div class="follow-card"></div>
     <script type="module" src="script.js"></script>
 </body>
 </html>

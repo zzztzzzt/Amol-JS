@@ -12,6 +12,7 @@ import { AmolButtonThunder } from './AMOL3DUI/legacy/UI/amol-button-thunder';
 import { AmolInputThunder } from './AMOL3DUI/legacy/UI/amol-input-thunder';
 import { AmolButtonRipple } from './AMOL3DUI/legacy/UI/amol-button-ripple';
 import { AmolCursorTrailRipple } from './AMOL3DUI/legacy/UI/amol-cursor-trail-ripple';
+import { MovieForgotten } from './AMOL3DUI/legacy/amol-movie-forgotten';
 
 /*
 All Tools :
@@ -27,6 +28,7 @@ AMOL.cameraSpeed(speed-X, speed-Y, speed-Z)
 AMOL.stopCamera()
 AMOL.stopCameraAt(position-X, position-Y, position-Z)
 AMOL.virtualScene(z-index, width, height, top, left)
+AMOL.movie(Movie-Name, z-index, width, height, top, left)
 */
 
 let uniqueObjectID = 1;
@@ -98,7 +100,7 @@ export { stopCamera };
 
 export { stopCameraAt };
 
-// Virtual Scene Area
+// Virtual Scene and Movie Area
 let uniqueDivName = 1;
 let uniqueVirtualObjectID = 1;
 
@@ -150,7 +152,7 @@ export function virtualScene(zIndexValue = 2, widthValue = 400, heightValue = 40
         }
         create(objectName, colorType = 0, viewOffset = 'fix') {
             uniqueVirtualObjectID++;
-            const name = `virtual-object-${uniqueObjectID}`;
+            const name = `virtual-object-${uniqueVirtualObjectID}`;
             return new AmolVirtualObject(name, objectName, colorType, viewOffset);
         }
         animate() {
@@ -159,4 +161,65 @@ export function virtualScene(zIndexValue = 2, widthValue = 400, heightValue = 40
     }
 
     return new AmolAdditionalScene();
+}
+
+export function movie(movieName = 'forgotten', zIndexValue = 2, widthValue = 400, heightValue = 400, topValue = 0, leftValue = 15) {
+    uniqueDivName++;
+    const divID = `div-id-${uniqueDivName}`;
+    const cssDivID = `css-div-id-${uniqueDivName}`;
+    let additionalScene;
+    if (movieName == "forgotten") additionalScene = new MovieForgotten(divID, cssDivID, zIndexValue, widthValue, heightValue, topValue, leftValue);
+    console.log(additionalScene);
+
+    class AmolVirtualObject {
+        constructor(name, objectName, colorType, viewOffset) {
+            this.name = name;
+            this.objectName = objectName;
+            this.colorType = colorType;
+            this.viewOffset = viewOffset;
+
+            const ObjectClass = objectMap[objectName];
+            if (ObjectClass) {
+                this.object = new ObjectClass(name, colorType, viewOffset);
+                additionalScene.addObject(this.object);
+            }
+        }
+
+        getValue() {
+            return additionalScene.returnValue(this.name);
+        }
+
+        setListener(event, func) {
+            additionalScene.addListener(event, func, this.name);
+        }
+
+        setPosition(posX = 0, posY = 0, posZ = 0) {
+            additionalScene.addPosition(posX, posY, posZ, this.name);
+        }
+
+        setScale(scale = 1.0) {
+            additionalScene.addScale(scale, this.name);
+        }
+
+        removeSelf() {
+            additionalScene.removeObject(this.name);
+            additionalScene.removeListener(this.name);
+        }
+    }
+
+    class AmolMovieScene {
+        constructor() {
+
+        }
+        create(objectName, colorType = 0, viewOffset = 'fix') {
+            uniqueVirtualObjectID++;
+            const name = `virtual-object-${uniqueVirtualObjectID}`;
+            return new AmolVirtualObject(name, objectName, colorType, viewOffset);
+        }
+        animate() {
+            additionalScene.animateAll();
+        }
+    }
+
+    return new AmolMovieScene();
 }
