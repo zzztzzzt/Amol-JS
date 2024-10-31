@@ -138,8 +138,8 @@ amol-cursor-trail-vanilla
 amol-cursor-trail-golden  
 amol-cursor-trail-ripple  
 
-## Old Versions
-
-![1.0logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.png)
-
+## Old Versions 1.1
 ![1.1logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.png)
+
+## Old Versions 1.0
+![1.0logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.png)
