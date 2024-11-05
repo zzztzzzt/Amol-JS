@@ -32,6 +32,13 @@ export class MovieForgotten {
         const funcListForAnimate = [];
         let currentObject = null;
 
+        let cameraLock = true;
+        let cameraLockRotate = true;
+        let cameraSpeedArr = [0, 0, 0];
+        let cameraSpeedArrRotate = [0, 0, 0];
+        let startCheckCamera = false;
+        let cameraStopPoint = [0, 0, 0];
+
         let maxFps = 60;
         let frameDelay = 1000 / maxFps;
         let lastFrameTime = 0;
@@ -273,6 +280,25 @@ export class MovieForgotten {
 
                 //controls.update();
 
+                if (!cameraLock) {
+                    camera.position.x += cameraSpeedArr[0];
+                    camera.position.y += cameraSpeedArr[1];
+                    camera.position.z += cameraSpeedArr[2];
+                }
+
+                if (!cameraLockRotate) {
+                    camera.rotation.x += cameraSpeedArrRotate[0];
+                    camera.rotation.y += cameraSpeedArrRotate[1];
+                    camera.rotation.z += cameraSpeedArrRotate[2];
+                }
+
+                if (startCheckCamera) {
+                    if (camera.position.x == cameraStopPoint[0] && camera.position.y == cameraStopPoint[1] && camera.position.z == cameraStopPoint[2]) {
+                        cameraLock = true;
+                        startCheckCamera = false;
+                    }
+                }
+
                 renderer.render(scene, camera);
                 cssRenderer.render(scene, camera);
             }
@@ -367,6 +393,35 @@ export class MovieForgotten {
 
         this.animateAll = function animateAll() {
             animate();
+        }
+
+        this.cameraSpeed =  function cameraSpeed(speedX, speedY, speedZ) {
+            cameraLock = false;
+            cameraSpeedArr[0] = speedX;
+            cameraSpeedArr[1] = speedY;
+            cameraSpeedArr[2] = speedZ;
+        }
+
+        this.cameraSpeedRotate =  function cameraSpeedRotate(rotateSpeedX, rotateSpeedY, rotateSpeedZ) {
+            cameraLockRotate = false;
+            cameraSpeedArrRotate[0] = rotateSpeedX;
+            cameraSpeedArrRotate[1] = rotateSpeedY;
+            cameraSpeedArrRotate[2] = rotateSpeedZ;
+        }
+
+        this.stopCamera =  function stopCamera() {
+            cameraLock = true;
+        }
+
+        this.stopCameraRotate =  function stopCameraRotate() {
+            cameraLockRotate = true;
+        }
+
+        this.stopCameraAt =  function stopCameraAt(x, y, z) {
+            startCheckCamera = true;
+            cameraStopPoint[0] = x;
+            cameraStopPoint[1] = y;
+            cameraStopPoint[2] = z;
         }
     }
 }

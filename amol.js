@@ -169,7 +169,6 @@ export function movie(movieName = 'forgotten', zIndexValue = 2, widthValue = 400
     const cssDivID = `css-div-id-${uniqueDivName}`;
     let additionalScene;
     if (movieName == "forgotten") additionalScene = new MovieForgotten(divID, cssDivID, zIndexValue, widthValue, heightValue, topValue, leftValue);
-    console.log(additionalScene);
 
     class AmolVirtualObject {
         constructor(name, objectName, colorType, viewOffset) {
@@ -218,6 +217,21 @@ export function movie(movieName = 'forgotten', zIndexValue = 2, widthValue = 400
         }
         animate() {
             additionalScene.animateAll();
+        }
+        cameraSpeed(x, y, z) {
+            additionalScene.cameraSpeed(x, y, z);
+        }
+        cameraSpeedRotate(x, y, z) {
+            additionalScene.cameraSpeedRotate(x, y, z);
+        }
+        stopCamera() {
+            additionalScene.stopCamera();
+        }
+        stopCameraRotate() {
+            additionalScene.stopCameraRotate();
+        }
+        stopCameraAt(x, y, z) {
+            additionalScene.stopCameraAt(x, y, z);
         }
     }
 
