@@ -35,6 +35,7 @@ npx vite
 
 ```javascript
 
+// cameraSpeedRotate() and stopCameraRotate() can only run in movie scene currently.
 import * as AMOL from './amol';
 
 const CameraStatus = {
@@ -43,30 +44,24 @@ const CameraStatus = {
 };
 let cameraStatus = CameraStatus.GO;
 
-// cameraSpeedRotate() and stopCameraRotate() can only run in movie scene currently.
 const myMovie = AMOL.movie('forgotten', -1, window.innerWidth, window.innerHeight, 0, 0);
 
-const adjustCamera = (speedX, speedY, speedZ, rotateX, rotateY, rotateZ, newStatus, delay = 3000, frameDelay = (1000 / 60)) => {
-    let lastFrameTime = 0;
+const adjustCamera = (speedX, speedY, speedZ, rotateX, rotateY, rotateZ, newStatus, delay = 3000) => {
+    myMovie.cameraSpeed(speedX, speedY, speedZ);
+    myMovie.cameraSpeedRotate(rotateX, rotateY, rotateZ);
+
+    // use RequestAnimationFrame replaces SetTimeout( () => {}, 3000 )
     const startTime = performance.now();
-
-    // Use requestAnimationFrame() to replaces setTimeout( ()=>{}, 3000 )
     const animate = (time) => {
-        if (time - lastFrameTime >= frameDelay) {
-            lastFrameTime = time - (time - lastFrameTime) % frameDelay;
-
-            const elapsedTime = time - startTime;
-
-            myMovie.cameraSpeed(speedX, speedY, speedZ);
-            myMovie.cameraSpeedRotate(rotateX, rotateY, rotateZ);
-
-            if (elapsedTime >= delay) {
-                myMovie.stopCamera();
-                myMovie.stopCameraRotate();
-                cameraStatus = newStatus;
-            }
+        if (time - startTime >= delay) {
+            myMovie.stopCamera();
+            myMovie.stopCameraRotate();
+            cameraStatus = newStatus;
+            cancelAnimationFrame(animate);
         }
-        requestAnimationFrame(animate);
+        else {
+            requestAnimationFrame(animate);
+        }
     };
     requestAnimationFrame(animate);
 };
