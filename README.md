@@ -1,6 +1,8 @@
 # Amol-JS
+![amol-logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png)
+Amol-JS is a package for creating 3D UI animations and effects.
 
-![1.3logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
+![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
 
 IMPORTANT : This project is still in the development and testing stages. Any form of use is not allowed. We are not responsible for any property damage or legal issues caused by the use of this project.
 
@@ -126,15 +128,15 @@ amol-cursor-trail-ripple
 amol-movie-forgotten  
 
 ### Art Versions ( Beta ) :
-AMOL.ClickTrackingStellar
-AMOL.CursorTrailStellar
+AMOL.ClickTrackingStellar  
+AMOL.CursorTrailStellar  
 
 
 ## Old Versions 1.2
-![1.2logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-three.webp)
+![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-three.webp)
 
 ## Old Versions 1.1
-![1.1logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.webp)
+![1.1showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.webp)
 
 ## Old Versions 1.0
-![1.0logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.webp)
+![1.0showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.webp)
