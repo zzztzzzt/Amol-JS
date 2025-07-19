@@ -1,6 +1,6 @@
 # Amol-JS
 
-![1.2logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-three.png)
+![1.2logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-three.webp)
 
 IMPORTANT : This project is still in the development and testing stages. Any form of use is not allowed. We are not responsible for any property damage or legal issues caused by the use of this project.
 
@@ -149,7 +149,7 @@ amol-cursor-trail-ripple
 amol-movie-forgotten  
 
 ## Old Versions 1.1
-![1.1logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.png)
+![1.1logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.webp)
 
 ## Old Versions 1.0
-![1.0logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.png)
+![1.0logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.webp)
