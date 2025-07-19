@@ -8,9 +8,9 @@ IMPORTANT : This project is still in the development and testing stages. Any for
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)  
 
+<br><br>
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
-
-
+<br><br>
 
 ## How To Use
 
