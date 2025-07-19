@@ -1,5 +1,5 @@
 # Amol-JS
-![amol-logo](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png)
+<img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" width="300" height="300"/>
 Amol-JS is a package for creating 3D UI animations and effects.
 
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
