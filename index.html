@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMOL App</title>
+    <link rel="icon" href="logo/favicon.png" type="image/png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
         body {
             background-image: url('logo/amoljs.jpg');
             background-size: 36%;
@@ -12,7 +16,339 @@
             background-position: center;
             height: 100vh;
             margin: 0;
+            position: relative;
             overflow: hidden;
+        }
+
+        #three-area {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #three-area-css {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+
+        .glass-card {
+            position: absolute;
+            display: flex;
+            width: 40%;
+            height: 30%;
+            align-items: center;
+            backdrop-filter: blur(2px);
+            transition: 1.9s ease;
+        }
+
+        #glass-card-1 {
+            background: linear-gradient(
+                135deg,
+                rgba(161, 196, 253, 0.6),
+                rgba(194, 233, 251, 0.4)
+            );
+            top: 0;
+            right: 0;
+            z-index: 10;
+            transform: rotate(-15deg);
+        }
+        #glass-card-1:hover {
+            backdrop-filter: blur(6px);
+            transform: rotate(0deg);
+            right: 0;
+            height: 50%;
+            width: 100%;
+        }
+        #glass-card-1:hover #text-area-1 {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            opacity: 1;
+        }
+        #glass-card-1:hover .big-text {
+            left: 60px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        #glass-card-2 {
+            background: linear-gradient(
+                135deg,
+                rgba(194, 233, 251, 0.6),
+                rgba(161, 196, 253, 0.4)
+            );
+            top: 23%;
+            right: -6%;
+            z-index: 11;
+            transform: rotate(-18deg);
+        }
+        #glass-card-2:hover {
+            backdrop-filter: blur(0px);
+            transform: rotate(0deg);
+            right: 0;
+            height: 50%;
+            width: 100%;
+        }
+        #glass-card-2:hover .big-text {
+            background: linear-gradient(-315deg, #6ec2ff, #666666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            left: 100px;
+        }
+        [id^="big-text-span-"] {
+            font-family: sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 1.5rem;
+        }
+        #glass-card-2:hover #big-text-span-1 {
+            transition-delay: 0.5s;
+            opacity: 1;
+            top: -10px;
+        }
+        #glass-card-2:hover #big-text-span-2 {
+            transition-delay: 0.8s;
+            opacity: 1;
+            top: -10px;
+        }
+        #glass-card-2:hover #big-text-span-3 {
+            transition-delay: 1.1s;
+            opacity: 1;
+            top: -10px;
+        }
+        #glass-card-2:hover #big-text-span-div {
+            opacity: 1;
+        }
+
+        #glass-card-3 {
+            background: linear-gradient(
+                135deg,
+                rgba(161, 196, 253, 0.6),
+                rgba(194, 233, 251, 0.15)
+            );
+            top: 46%;
+            right: -13%;
+            z-index: 12;
+            transform: rotate(-21deg);
+        }
+        #glass-card-3:hover {
+            transform: rotate(0deg);
+            right: 0;
+            height: 50%;
+            width: 100%;
+        }
+        #glass-card-3:hover #text-area-3 {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            opacity: 1;
+        }
+        #glass-card-3:hover .big-text {
+            left: 60px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .text-area {
+            margin-left: 10%;
+            padding: 21px;
+            transition: 1.9s;
+            width: 45%;
+            background: linear-gradient(-315deg, #fff4d4, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border: 3px solid transparent;
+            border-image: linear-gradient(-315deg, #fff4d4, #ffffff) 1;
+            opacity: 0;
+            font-size: 0.5rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .big-text {
+            position: absolute;
+            left: 35px;
+            font-size: 2rem;
+            opacity: 1;
+            background: linear-gradient(-315deg, #6ec2ff, #101010);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Outfit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            transition: 1.9s;
+        }
+        #big-text-span-div {
+            position: relative;
+            transition: 1.9s;
+            color: gray;
+            width: 250px;
+            margin-left: 270px;
+        }
+        #big-text-span-1 {
+            position: absolute;
+            opacity: 0;
+            top: 20px;
+            transition: 1.2s;
+        }
+        #big-text-span-2 {
+            position: absolute;
+            opacity: 0;
+            top: 20px;
+            left: 38px;
+            transition: 1.2s;
+        }
+        #big-text-span-3 {
+            position: absolute;
+            opacity: 0;
+            top: 20px;
+            left: 145px;
+            transition: 1.2s;
+        }
+
+        #round-img {
+            position: absolute;
+            top: -405px;
+            left: -405px;
+            width: 1000px;
+            height: 1000px;
+            border-radius: 1000px;
+            z-index: -10;
+        }
+        #round-img-cover {
+            position: absolute;
+            background-color: white;
+            top: -300px;
+            left: -300px;
+            width: 600px;
+            height: 600px;
+            border-radius: 1000px;
+            z-index: -9;
+            transition: 1.9s;
+        }
+        #round-img-cover-2 {
+            position: absolute;
+            border: solid 120px;
+            border-color: white;
+            top: -600px;
+            left: -600px;
+            width: 1000px;
+            height: 1000px;
+            border-radius: 1000px;
+            z-index: -9;
+        }
+        #round-img-cover-3 {
+            position: absolute;
+            background-color: white;
+            top: 380px;
+            left: -130px;
+            width: 900px;
+            height: 900px;
+            border-radius: 1000px;
+            z-index: -9;
+            transition: 1.9s;
+        }
+        #code-example {
+            position: absolute;
+            opacity: 1;
+            font-size: calc(8rem + 10vh);
+            left: 200px;
+            bottom: calc(1000px - 54vh);
+            background: linear-gradient(-180deg, #6ec2ff, #cfcfcf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: 1.9s;
+        }
+        #code-example-text {
+            position: absolute;
+            font-size: calc(1rem + 1.25vh);
+            left: 320px;
+            bottom: calc(1000px - 54vh);
+            background: linear-gradient(-45deg, #d4d4d4, #101010);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            transition: 1.9s;
+        }
+        #code-example-text span {
+            font-size: calc(0.4rem + 0.5vh);
+        }
+
+        #rotate-btn {
+            background-image: linear-gradient(45deg, #000000, #1000bd);
+            border-radius: 100px;
+            top: 60px;
+            left: 25px;
+            position: relative;
+            width: 200px;
+            height: 65px;
+            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            color: white;
+            font-size: 1.2rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            cursor: pointer;
+        }
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg;
+            }
+        }
+        #rotate-btn:after {
+          content: '';
+          background-image: conic-gradient(from var(--angle), var(--conic-colors));
+          border-radius: 50px;
+          display: inline-block;
+          position: absolute;
+          width: 106%;
+          height: 114%;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+          z-index: -1;
+          animation: 3s spin linear infinite;
+        }
+        #rotate-btn span {
+            margin: auto;
+        }
+
+        #full-cover {
+            position: absolute;
+            opacity: 0;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        #click-text {
+            display: none;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            position: absolute;
+            font-size: 100px;
+            font-weight: bold;
+            background: linear-gradient(to right, #fff585, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            pointer-events: none;
         }
 
         @media (max-width: 600px) {}
@@ -23,6 +359,47 @@
     </style>
 </head>
 <body>
+    <div id="three-area"></div>
+    <div id="three-area-css"></div>
+
+    <div id="full-cover"></div>
+
+    <div><img src="example-img/please-dont-use-ONLY-FOR-EXAMPLE-photo-by-conrad-crawford.webp" id="round-img" /></div>
+    <div id="round-img-cover"></div>
+    <div id="round-img-cover-2"></div>
+    <div id="round-img-cover-3">
+        <div id="code-example">{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+        <div id="code-example-text">Just Few Lines Code !<br><span>
+            const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");<br>
+
+            const clickOne = new AMOL.CkickTrackingStellar;<br>
+            basicScene.create(clickOne);<br>
+
+            const cursorOne = new AMOL.CursorTrailStellar;<br>
+            basicScene.create(cursorOne);</span></div>
+    </div>
+
+    <div id="glass-card-1" class="glass-card">
+        <div class="big-text">Stylish</div>
+        <div id="text-area-1" class="text-area">
+            Amol-JS is a pioneering 3D web framework dedicated to helping developers create the most beautiful and immersive web animations.
+        </div>
+    </div>
+    <div id="glass-card-2" class="glass-card">
+        <div class="big-text">Powerful </div>
+        <div id="big-text-span-div"><span id="big-text-span-1"> 3d </span><span id="big-text-span-2"> frontend </span><span id="big-text-span-3"> tooling . </span></div>
+    </div>
+    <div id="glass-card-3" class="glass-card">
+        <div class="big-text">Creativity</div>
+        <div id="text-area-3" class="text-area">
+            Mouse tracking, 3D buttons, 3D input boxes, Tap tracking, Customizable 3D objects... The possibilities are Endless
+        </div>
+    </div>
+
+    <div id="rotate-btn"><span id="rotate-btn-span">Pure 3d Mode</span></div>
+
+    <div id="click-text">👆</div>
+
     <script type="module" src="script.js"></script>
 </body>
 </html>
