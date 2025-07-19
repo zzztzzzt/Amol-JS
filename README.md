@@ -2,12 +2,12 @@
 <img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" width="300" height="300"/>
 Amol-JS is a package for creating 3D UI animations and effects.
 
-![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
-
 IMPORTANT : This project is still in the development and testing stages. Any form of use is not allowed. We are not responsible for any property damage or legal issues caused by the use of this project.
 
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)
+
+![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
 
 ## How To Use
 
