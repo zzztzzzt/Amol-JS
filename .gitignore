@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# lock file
+package-lock.json
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
