@@ -9,5 +9,8 @@ const envMap = await basicScene.loadEnvironment('/AMOL3D/UI/hdr/example_puresky_
 const ocean = new AMOL.MovieWater(basicScene, envMap);
 basicScene.create(ocean);
 
-//const ruin1 = new AMOL.MovieRuinOne();
-//basicScene.create(ruin1);
+const ruin1 = new AMOL.MovieRuinOne();
+ruin1.scaleSet(13, 13, 13);
+ruin1.positionSet(8, -3.5, -50);
+ruin1.rotationSet(0, Math.PI / 12, 0);
+basicScene.create(ruin1);

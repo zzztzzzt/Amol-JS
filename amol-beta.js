@@ -21,7 +21,7 @@ export { setup };
 console.group("amol -v");
 
 console.log(
-    "%c🔭 You are using Amol.js\n⚖️ Version - 1.4 .251220",
+    "%c🔭 You are using Amol.js\n⚖️ Version - 1.4 .251228",
     "font-weight: bold; font-size: 18px; background: linear-gradient(to right, #94d8ff, #70ffc4); color: transparent; background-clip: text; -webkit-background-clip: text;"
 );
 console.log(
