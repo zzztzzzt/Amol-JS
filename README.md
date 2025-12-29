@@ -2,7 +2,7 @@
 <br>
 <img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="width: 300px; min-height: 187px;" />
 
-### Amol-JS is a package for creating 3D UI and interaction.
+### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
 
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
 
@@ -39,6 +39,27 @@ npx vite
 
 4. You'll see a URL in your terminal. You can open this URL in your browser.
 
+### Embed Amol-JS to your project ( for quick use ignore this )
+1. Install Node.js and git clone this project.
+
+2. Install Three.js using terminal in your project folder.
+```cmd
+
+npm install three
+
+```
+
+3. Put `amol-beta.js` and `AMOL3D folder` into your project folder.
+
+4. import Amol-JS to your javascript / Three-js code
+```javascript
+
+import * as AMOL from "./amol-beta";
+
+```
+
+5. for detail usage please see below steps.
+
 ## Example Code
 
 ```javascript
@@ -60,28 +81,9 @@ basicScene.create(ruin1);
 
 ```
 
-## Embed Amol-JS to your project ( for quick use ignore this )
-1. Install Node.js and git clone this project.
-
-2. Install Three.js using terminal in your project folder.
-```cmd
-
-npm install three
-
-```
-
-3. Put `amol-beta.js` and `AMOL3D folder` into your project folder.
-
-4. import Amol-JS to your javascript / Three-js code
-```javascript
-
-import * as AMOL from "./amol-beta";
-
-```
-
-## API Usage & Tools ( for pure `Three.js` usage, jump to next step )
+## API Usage & Tools ( for pure Three.js usage, jump to next step )
 ### 1. create basic 3D Space
-add 2 <div>, one for 3D render and one for CSS3D
+add 2 `div`, one for 3D render and one for CSS3D
 ```html
 
 <div id="three-area"></div>
@@ -114,7 +116,7 @@ ruin1.rotationSet(0, Math.PI / 12, 0);
 ```
 ( wip : color-setting & clean self-removing )
 
-## Directly use with `Three.js` ( for API usage ignore this )
+## Directly use with Three.js ( for API usage ignore this )
 ### 1. import Amol-JS & new a 3D UI Component
 ```javascript
 
@@ -129,8 +131,13 @@ const movieRuin = new AMOL.MovieRuinOne();
 // get all meshes ( JS object format )
 const meshes = await movieRuin.getMeshes();
 Object.values(meshes).forEach(mesh => {
-    this.scene.add(mesh);
+    scene.add(mesh);
 });
+
+```
+
+### 3. add their anmations to your Three.js code
+```javascript
 
 // add this to animate function
 const animateFunc = movieRuin.getAnimateFunc();
@@ -144,7 +151,7 @@ const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
 
 ```
 
-## History
+## Version History
 
 #### V 1.3 - more beautiful 3D interactions. (2025.07)
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp)
