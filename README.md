@@ -51,14 +51,14 @@ npm install three
 
 3. Put `amol-beta.js` and `AMOL3D folder` into your project folder.
 
-4. import Amol-JS to your javascript / Three-js code
+4. Import Amol-JS to your javascript / Three-js code
 ```javascript
 
 import * as AMOL from "./amol-beta";
 
 ```
 
-5. for detail usage please see below steps.
+5. For detail usage please see below steps.
 
 ## Example Code
 
@@ -77,6 +77,7 @@ const ruin1 = new AMOL.MovieRuinOne();
 ruin1.scaleSet(13, 13, 13);
 ruin1.positionSet(8, -3.5, -50);
 ruin1.rotationSet(0, Math.PI / 12, 0);
+
 basicScene.create(ruin1);
 
 ```
@@ -136,7 +137,7 @@ Object.values(meshes).forEach(mesh => {
 
 ```
 
-### 3. add their anmations to your Three.js code
+### 3. add component's animations to your Three.js code
 ```javascript
 
 // add this to animate function
@@ -145,8 +146,11 @@ const animateFunc = movieRuin.getAnimateFunc();
 // add these to your Event Listener
 // please setup Three.js RayCaster first, to judge the mouse intersects
 const clickAnimate = movieRuin.getListenerFunc("click");
+
 const mouseInAnimate = movieRuin.getListenerFunc("mouseover");
+
 const mouseOutAnimate = movieRuin.getListenerFunc("notmouseover");
+
 const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
 
 ```
