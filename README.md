@@ -10,7 +10,7 @@ Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)  
 <br>
 
-![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
+![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp)
 <br><br>
 
 ## How To Use
@@ -138,13 +138,13 @@ AMOL.CursorTrailStellar
 ## History
 
 #### V 1.3 - more beautiful 3D interactions. (2025.07)
-![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-four.webp)
+![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp)
 
 #### V 1.2 - now can add GLB files. (2024.11)
-![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-three.webp)
+![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-three.webp)
 
 #### V 1.1 - now can be mixed with 2D web design. (2024.10)
-![1.1showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase-two.webp)
+![1.1showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-two.webp)
 
 #### V 1.0 - AMOL.js was founded. (2024.09)
-![1.0showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/logo/real-showcase.webp)
+![1.0showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase.webp)
