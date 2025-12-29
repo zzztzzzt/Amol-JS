@@ -2,9 +2,9 @@
 <br>
 <img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="width: 300px; min-height: 187px;" />
 
-### Amol-JS is a package for creating 3D UI animations and effects.
+### Amol-JS is a package for creating 3D UI and interaction.
 
-IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future.
+IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
 
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)  
@@ -21,7 +21,7 @@ Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https:/
 2. Install Three.js and Vite using terminal in this project folder.
 ```cmd
 
-npm install --save three
+npm install three
 
 ```
 ```cmd
@@ -45,7 +45,6 @@ npx vite
 
 import * as AMOL from "./amol-beta";
 
-
 const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
 
 const envMap = await basicScene.loadEnvironment('/AMOL3D/UI/hdr/example_puresky_1k.hdr', 0, Math.PI * 5 / 9, 0);
@@ -57,7 +56,6 @@ const ruin1 = new AMOL.MovieRuinOne();
 ruin1.scaleSet(13, 13, 13);
 ruin1.positionSet(8, -3.5, -50);
 ruin1.rotationSet(0, Math.PI / 12, 0);
-
 basicScene.create(ruin1);
 
 ```
@@ -65,42 +63,86 @@ basicScene.create(ruin1);
 ## Embed Amol-JS to your project ( for quick use ignore this )
 1. Install Node.js and git clone this project.
 
-2. Install Three.js and Vite using terminal in your project folder.
+2. Install Three.js using terminal in your project folder.
 ```cmd
 
-npm install --save three
-
-```
-```cmd
-
-npm install --save-dev vite
+npm install three
 
 ```
 
 3. Put `amol-beta.js` and `AMOL3D folder` into your project folder.
 
-4. import Amol-JS to your javascript : `import * as AMOL from "./amol-beta";`
+4. import Amol-JS to your javascript / Three-js code
+```javascript
 
-## All Tools
-AMOL.create(3D-object-Name, color-type, view-offset)  
-getValue()  
-setListener(event, function)  
-setPosition(position-X, position-Y, position-Z)  
-setScale(scale)  
-removeSelf()  
+import * as AMOL from "./amol-beta";
 
-AMOL.animate()  
-AMOL.cameraSpeed(speed-X, speed-Y, speed-Z)  
-AMOL.stopCamera()  
-AMOL.stopCameraAt(position-X, position-Y, position-Z)  
-AMOL.virtualScene(z-index, width, height, top, left)  
-AMOL.movie(Movie-Name, z-index, width, height, top, left)  
+```
 
-### Tools ( Beta ) : 
-AMOL.setup.jsVer("div-id-for-threejs", "div-id-for-threejs-css3d")
+## API Usage & Tools ( for pure `Three.js` usage, jump to next step )
+### 1. create basic 3D Space
+add 2 <div>, one for 3D render and one for CSS3D
+```html
 
-new AMOL.3DObjectOrEffects()
-( example : new AMOL.ClickTrackingStellar() )
+<div id="three-area"></div>
+<div id="three-area-css"></div>
+
+```
+setup basic scene in javascript
+```javascript
+
+import * as AMOL from "./amol-beta";
+const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
+
+```
+
+### 2. add 3D UI Conponent
+```javascript
+
+const movieRuin = new AMOL.MovieRuinOne();
+basicScene.create(movieRuin);
+
+```
+
+### 3. set the 3D UI Components position, rotation & scaling
+```javascript
+
+ruin1.scaleSet(13, 13, 13);
+ruin1.positionSet(8, -3.5, -50);
+ruin1.rotationSet(0, Math.PI / 12, 0);
+
+```
+( wip : color-setting & clean self-removing )
+
+## Directly use with `Three.js` ( for API usage ignore this )
+### 1. import Amol-JS & new a 3D UI Component
+```javascript
+
+import * as AMOL from "./amol-beta";
+const movieRuin = new AMOL.MovieRuinOne();
+
+```
+
+### 2. add Components to your Three.js scene
+```javascript
+
+// get all meshes ( JS object format )
+const meshes = await movieRuin.getMeshes();
+Object.values(meshes).forEach(mesh => {
+    this.scene.add(mesh);
+});
+
+// add this to animate function
+const animateFunc = movieRuin.getAnimateFunc();
+
+// add these to your Event Listener
+// please setup Three.js RayCaster first, to judge the mouse intersects
+const clickAnimate = movieRuin.getListenerFunc("click");
+const mouseInAnimate = movieRuin.getListenerFunc("mouseover");
+const mouseOutAnimate = movieRuin.getListenerFunc("notmouseover");
+const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
+
+```
 
 ## History
 
