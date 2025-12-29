@@ -4,7 +4,7 @@
 
 ### Amol-JS is a package for creating 3D UI animations and effects.
 
-IMPORTANT : This project is still in the development and testing stages. Any form of use is not allowed. We are not responsible for any property damage or legal issues caused by the use of this project.
+IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future.
 
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)  
@@ -30,39 +30,39 @@ npm install --save-dev vite
 
 ```
 
-3. Run "npx vite" in terminal and then open the URL that Vite gives you.
+3. Run `npx vite` in terminal and then open the URL that Vite gives you.
 ```cmd
 
 npx vite
 
 ```
 
+4. You'll see a URL in your terminal. You can open this URL in your browser.
+
 ## Example Code
 
 ```javascript
 
+import * as AMOL from "./amol-beta";
+
+
 const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
-//basicScene.status();
 
-let colorCounter = 0;
+const envMap = await basicScene.loadEnvironment('/AMOL3D/UI/hdr/example_puresky_1k.hdr', 0, Math.PI * 5 / 9, 0);
 
-const trackingOne = new AMOL.ClickTrackingStellar();
-//trackingOne.status();
-basicScene.create(trackingOne);
-const changeTrackingColor = () => {
-  trackingOne.colorSet(colorCounter % 2);
-};
+const ocean = new AMOL.MovieWater(basicScene, envMap);
+basicScene.create(ocean);
 
-const cursorOne = new AMOL.CursorTrailStellar;
-//cursorOne.status();
-basicScene.create(cursorOne);
-const changeCubeColor = () => {
-  cursorOne.colorSet(colorCounter % 2);
-};
+const ruin1 = new AMOL.MovieRuinOne();
+ruin1.scaleSet(13, 13, 13);
+ruin1.positionSet(8, -3.5, -50);
+ruin1.rotationSet(0, Math.PI / 12, 0);
+
+basicScene.create(ruin1);
 
 ```
 
-## Use in Other Project ( for quick use ignore this )
+## Embed Amol-JS to your project ( for quick use ignore this )
 1. Install Node.js and git clone this project.
 
 2. Install Three.js and Vite using terminal in your project folder.
@@ -77,18 +77,9 @@ npm install --save-dev vite
 
 ```
 
-3. Put "amol.js" and "AMOL3DUI folder" into your project folder.
+3. Put `amol-beta.js` and `AMOL3D folder` into your project folder.
 
-4. Create "index.html" and your JS files.
-
-5. Open terminal in your project folder and run :
-```cmd
-
-npx vite
-
-```
-
-6. You'll see a URL in your terminal. You can open this URL in your browser.
+4. import Amol-JS to your javascript : `import * as AMOL from "./amol-beta";`
 
 ## All Tools
 AMOL.create(3D-object-Name, color-type, view-offset)  
@@ -110,30 +101,6 @@ AMOL.setup.jsVer("div-id-for-threejs", "div-id-for-threejs-css3d")
 
 new AMOL.3DObjectOrEffects()
 ( example : new AMOL.ClickTrackingStellar() )
-
-
-### Art Versions :
-amol-button-vanilla  
-amol-button-golden  
-amol-button-thunder  
-amol-button-ripple  
-
-amol-click-tracking-vanilla  
-amol-click-tracking-golden  
-
-amol-input-vanilla  
-amol-input-golden  
-amol-input-thunder  
-
-amol-cursor-trail-vanilla  
-amol-cursor-trail-golden  
-amol-cursor-trail-ripple  
-
-amol-movie-forgotten  
-
-### Art Versions ( Beta ) :
-AMOL.ClickTrackingStellar  
-AMOL.CursorTrailStellar  
 
 ## History
 
