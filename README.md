@@ -1,6 +1,6 @@
 # Amol-JS
 <br>
-<img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="width: 300px; min-height: 187px;" />
+<img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="height: 240px; width: auto;" />
 
 ### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
 
