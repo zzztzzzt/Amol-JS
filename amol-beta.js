@@ -1,6 +1,7 @@
 import { AmolScene } from "./AMOL3D/amol-setup-beta";
 export { ButtonVanilla } from "./AMOL3D/UI/amol-button-vanilla";
 export { ButtonGolden } from "./AMOL3D/UI/amol-button-golden";
+export { ButtonFlowerRing } from "./AMOL3D/UI/amol-button-flower-ring";
 export { ClickTrackingStellar } from "./AMOL3D/UI/amol-click-tracking-stellar";
 export { ClickTrackingLilac } from "./AMOL3D/UI/amol-click-tracking-lilac";
 export { CursorTrailStellar } from "./AMOL3D/UI/amol-cursor-trail-stellar";

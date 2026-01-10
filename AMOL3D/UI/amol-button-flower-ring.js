@@ -1,21 +1,22 @@
 import * as THREE from 'three';
-//import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export class BaseTemplate {
+export class ButtonFlowerRing {
     constructor(color = 0) {
         // 1. Variables
-        this.objectType = 'object-type';
+        this.objectType = 'button';
 
         this.color = color;
-        let colorTypeOne = {};
+        let colorTypeOne = {
+            "model-ring-flower-path": './AMOL3D/UI/models/ring-flower-pink.glb',
+        };
         let colorTypeTwo = {};
         let colorCustom = {};
         this.colorTypeList = [colorTypeOne, colorTypeTwo, colorCustom];
 
         // 2. Meshes
-        /*let glbModel = null;
+        let glbModel = null;
         this.mainMesh = glbModel;
-        */
 
         // 3. Lights
 
@@ -40,7 +41,7 @@ export class BaseTemplate {
         // 6. Functions
     }
 
-    /*async loadModelAsync(GlbPath = "your-glb-file-path") {
+    async loadModelAsync(GlbPath = this.colorTypeList[this.color]["model-ring-flower-path"]) {
         const loader = new GLTFLoader();
         try {
             const gltf = await this.loadModel(loader, GlbPath);
@@ -79,11 +80,10 @@ export class BaseTemplate {
             }
         });
     }
-    */
     
 
     async getMeshes() {
-        //await this.loadModelAsync();
+        await this.loadModelAsync();
         return {
             // main mesh must be named "this.mainMesh", for raycaster judging.
             mainMesh: this.mainMesh,
