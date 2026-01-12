@@ -158,7 +158,7 @@ const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
 ## Version History
 
 #### V 1.3 - more beautiful 3D interactions. (2025.07)
-![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp)
+![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp?v=2)
 
 #### V 1.2 - now can add GLB files. (2024.11)
 ![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-three.webp)
