@@ -17,5 +17,5 @@ movieObjOne.rotationSet(0, Math.PI / 12, 0);
 basicScene.create(movieObjOne);
 */
 
-const btn3d = new AMOL.ButtonVanilla();
+const btn3d = new AMOL.ButtonFlowerRing();
 basicScene.create(btn3d);
