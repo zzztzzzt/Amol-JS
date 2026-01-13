@@ -13,9 +13,9 @@ Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https:/
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp)
 <br><br>
 
-## How To Use
+## Installation
 
-### Quick Use - No Need Coding !
+### Quick Start - No Need Coding !
 1. Install Node.js and git clone this project.
 
 2. Install Three.js and Vite using terminal in this project folder.
@@ -60,29 +60,10 @@ import * as AMOL from "./amol-beta";
 
 5. For detail usage please see below steps.
 
-## Example Code
+## How To Use
 
-```javascript
+### ( for pure Three.js usage, jump to next step )
 
-import * as AMOL from "./amol-beta";
-
-const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
-
-const envMap = await basicScene.loadEnvironment('/AMOL3D/UI/hdr/example_puresky_1k.hdr', 0, Math.PI * 5 / 9, 0);
-
-const ocean = new AMOL.MovieWater(basicScene, envMap);
-basicScene.create(ocean);
-
-const movieObjOne = new AMOL.MovieRuinOne();
-movieObjOne.scaleSet(13, 13, 13);
-movieObjOne.positionSet(8, -3.5, -50);
-movieObjOne.rotationSet(0, Math.PI / 12, 0);
-
-basicScene.create(movieObjOne);
-
-```
-
-## API Usage & Tools ( for pure Three.js usage, jump to next step )
 ### 1. create basic 3D Space
 add 2 `div`, one for 3D render and one for CSS3D
 ```html
@@ -152,6 +133,28 @@ const mouseInAnimate = movieRuin.getListenerFunc("mouseover");
 const mouseOutAnimate = movieRuin.getListenerFunc("notmouseover");
 
 const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
+
+```
+
+## Example Code
+
+```javascript
+
+import * as AMOL from "./amol-beta";
+
+const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
+
+const envMap = await basicScene.loadEnvironment('/AMOL3D/UI/hdr/example_puresky_1k.hdr', 0, Math.PI * 5 / 9, 0);
+
+const ocean = new AMOL.MovieWater(basicScene, envMap);
+basicScene.create(ocean);
+
+const movieObjOne = new AMOL.MovieRuinOne();
+movieObjOne.scaleSet(13, 13, 13);
+movieObjOne.positionSet(8, -3.5, -50);
+movieObjOne.rotationSet(0, Math.PI / 12, 0);
+
+basicScene.create(movieObjOne);
 
 ```
 
