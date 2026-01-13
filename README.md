@@ -13,6 +13,19 @@ Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https:/
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp)
 <br><br>
 
+## Why Amol-JS
+### 1. Significantly simplifies Three.js development
+We provide simple template, you don't need to adjust `Raycaster`, `Event Listener`, `FPS` and other `3D Scene Setup`.
+
+### 2. Updates that keep pace with the times
+We will flexibly modify the API in line with the latest AI and 3D trends, also includes Three.js new version.
+
+### 3. Progressive Usage
+The Amol-JS UI can be fully embeded into Three.js code, there are no conflicts.
+
+### 4. HCD codes, HCD docs
+Human-Centered Design : not just design 3D & UI, we also design the whole usage flow, to make sure everyone can have the best dev experience.
+
 ## Installation
 
 ### Quick Start - No Need Coding !
