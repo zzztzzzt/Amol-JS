@@ -161,7 +161,7 @@ const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp?v=2)
 
 #### V 1.2 - now can add GLB files. (2024.11)
-![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-three.webp)
+![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-three.webp?v=2)
 
 #### V 1.1 - now can be mixed with 2D web design. (2024.10)
 ![1.1showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-two.webp)
