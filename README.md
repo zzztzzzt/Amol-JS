@@ -157,14 +157,14 @@ const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
 
 ## Version History
 
-#### V 1.3 - more beautiful 3D interactions. (2025.07)
+#### V 1.3 (2025.07) - A consolidation of previous features. An expanded library of pre-built 3D UI components & Animations for faster development.
 ![1.3showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-four.webp?v=2)
 
-#### V 1.2 - now can add GLB files. (2024.11)
+#### V 1.2 (2024.11) - GLB/glTF Support. A modular template system that allows developers to deploy GLB-based UI components and environments instantly.
 ![1.2showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-three.webp?v=2)
 
-#### V 1.1 - now can be mixed with 2D web design. (2024.10)
+#### V 1.1 (2024.10) - Layered Web Design Support, Multi-Scene Architecture, can mixed with 2D elements via z-index. Native Responsive Handling.
 ![1.1showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase-two.webp)
 
-#### V 1.0 - AMOL.js was founded. (2024.09)
+#### V 1.0 (2024.09) - The start of AMOL.js Project. High-level Three.js Wrapper, support hybrid development with Three.js. Intuitive method for 3D Scene & UI component creation.
 ![1.0showcase](https://github.com/zzztzzzt/Amol-JS/blob/main/showcase/real-showcase.webp)
