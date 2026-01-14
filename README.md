@@ -4,7 +4,6 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/zzztzzzt/AMOL-JS.svg)
 ![CodeQL](https://github.com/zzztzzzt/Amol-JS/actions/workflows/codeql.yml/badge.svg)
-![CI](https://github.com/zzztzzzt/Amol-JS/actions/workflows/ci.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
 
 ### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
