@@ -2,6 +2,10 @@
 <br>
 <img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="height: 280px; width: auto;" />
 
+![GitHub top language](https://img.shields.io/github/languages/top/zzztzzzt/Amol-JS.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/zzztzzzt/AMOL-JS.svg)
+
 ### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
 
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
@@ -33,21 +37,15 @@ Human-Centered Design : not just design 3D & UI, we also design the whole usage 
 
 2. Install Three.js and Vite using terminal in this project folder.
 ```cmd
-
 npm install three
-
 ```
 ```cmd
-
 npm install --save-dev vite
-
 ```
 
 3. Run `npx vite` in terminal and then open the URL that Vite gives you.
 ```cmd
-
 npx vite
-
 ```
 
 4. You'll see a URL in your terminal. You can open this URL in your browser.
@@ -57,18 +55,14 @@ npx vite
 
 2. Install Three.js using terminal in your project folder.
 ```cmd
-
 npm install three
-
 ```
 
 3. Put `amol-beta.js` and `AMOL3D folder` into your project folder.
 
 4. Import Amol-JS to your javascript / Three-js code
 ```javascript
-
 import * as AMOL from "./amol-beta";
-
 ```
 
 5. For detail usage please see below steps.
@@ -80,60 +74,47 @@ import * as AMOL from "./amol-beta";
 ### 1. create basic 3D Space
 add 2 `div`, one for 3D render and one for CSS3D
 ```html
-
 <div id="three-area"></div>
 <div id="three-area-css"></div>
-
 ```
 setup basic scene in javascript
 ```javascript
-
 import * as AMOL from "./amol-beta";
 const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
-
 ```
 
 ### 2. add 3D UI Conponent
 ```javascript
-
 const movieRuin = new AMOL.MovieRuinOne();
 basicScene.create(movieRuin);
-
 ```
 
 ### 3. set the 3D UI Components position, rotation & scaling
 ```javascript
-
 ruin1.scaleSet(13, 13, 13);
 ruin1.positionSet(8, -3.5, -50);
 ruin1.rotationSet(0, Math.PI / 12, 0);
-
 ```
 ( wip : color-setting & clean self-removing )
 
 ## Directly use with Three.js ( for API usage ignore this )
 ### 1. import Amol-JS & new a 3D UI Component
 ```javascript
-
 import * as AMOL from "./amol-beta";
 const movieRuin = new AMOL.MovieRuinOne();
-
 ```
 
 ### 2. add Components to your Three.js scene
 ```javascript
-
 // get all meshes ( JS object format )
 const meshes = await movieRuin.getMeshes();
 Object.values(meshes).forEach(mesh => {
     scene.add(mesh);
 });
-
 ```
 
 ### 3. add component's animations to your Three.js code
 ```javascript
-
 // add this to animate function
 const animateFunc = movieRuin.getAnimateFunc();
 
@@ -146,13 +127,11 @@ const mouseInAnimate = movieRuin.getListenerFunc("mouseover");
 const mouseOutAnimate = movieRuin.getListenerFunc("notmouseover");
 
 const mouseMoveAnimate = movieRuin.getListenerFunc("mousemove");
-
 ```
 
 ## Example Code
 
 ```javascript
-
 import * as AMOL from "./amol-beta";
 
 const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
@@ -168,7 +147,6 @@ movieObjOne.positionSet(8, -3.5, -50);
 movieObjOne.rotationSet(0, Math.PI / 12, 0);
 
 basicScene.create(movieObjOne);
-
 ```
 
 ## Version History
