@@ -7,6 +7,9 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/zzztzzzt/AMOL-JS.svg)
 ![CodeQL](https://github.com/zzztzzzt/Amol-JS/actions/workflows/codeql.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
+<br>
+[![codecov](https://codecov.io/github/zzztzzzt/Amol-JS/branch/main/graph/badge.svg?token=K607N4E6EZ)](https://codecov.io/github/zzztzzzt/Amol-JS)
+[![Test Coverage](https://github.com/zzztzzzt/Amol-JS/actions/workflows/test.yml/badge.svg)](https://github.com/zzztzzzt/Amol-JS/actions/workflows/test.yml)
 
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
 
@@ -28,7 +31,7 @@ We will flexibly modify the API in line with the latest AI and 3D trends, also i
 The Amol-JS UI can be fully embeded into Three.js code, there are no conflicts.
 
 ### 4. HCD codes, HCD docs
-Human-Centered Design : not just design 3D & UI, we also design the whole usage flow, to make sure everyone can have the best dev experience.
+Human-Centered Design : we also design the whole usage flow to make sure everyone have the best dev experience.
 
 ## Installation
 
