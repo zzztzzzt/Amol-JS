@@ -2,11 +2,11 @@
 <br>
 <img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="height: 280px; width: auto;" />
 
+### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/zzztzzzt/AMOL-JS.svg)
 ![CodeQL](https://github.com/zzztzzzt/Amol-JS/actions/workflows/codeql.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
-
-### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
 
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
 
