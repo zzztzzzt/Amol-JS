@@ -8,6 +8,7 @@
 ![CodeQL](https://github.com/zzztzzzt/Amol-JS/actions/workflows/codeql.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
 <br>
+<br>
 [![codecov](https://codecov.io/github/zzztzzzt/Amol-JS/branch/main/graph/badge.svg?token=K607N4E6EZ)](https://codecov.io/github/zzztzzzt/Amol-JS)
 [![Test Coverage](https://github.com/zzztzzzt/Amol-JS/actions/workflows/test.yml/badge.svg)](https://github.com/zzztzzzt/Amol-JS/actions/workflows/test.yml)
 
