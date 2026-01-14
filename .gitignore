@@ -1,6 +1,9 @@
 # Node modules
 node_modules/
 
+# Vitest
+coverage/
+
 # lock file
 package-lock.json
 
