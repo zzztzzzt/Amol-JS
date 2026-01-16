@@ -1,12 +1,15 @@
 # Amol-JS
-<br>
-<img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="height: 280px; width: auto;" />
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/zzztzzzt/AMOL-JS.svg)
 ![CodeQL](https://github.com/zzztzzzt/Amol-JS/actions/workflows/codeql.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
 [![codecov](https://codecov.io/github/zzztzzzt/Amol-JS/branch/main/graph/badge.svg?token=K607N4E6EZ)](https://codecov.io/github/zzztzzzt/Amol-JS)
 [![Lyra](https://img.shields.io/badge/Designed_with-Lyra-FFC6EC?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjEzMDAiIHZpZXdCb3g9IjAgMCA4MDAgMTMwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNzUiIHk9Ijc1IiB3aWR0aD0iNjUwIiBoZWlnaHQ9IjExNTAiIHN0cm9rZT0idXJsKCNwYWludDBfbGluZWFyXzIxNjVfNykiIHN0cm9rZS13aWR0aD0iMTUwIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfMjE2NV83IiB4MT0iNDAwIiB5MT0iMCIgeDI9IjQwMCIgeTI9IjEzMDAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0JCRkZFRCIvPgo8c3RvcCBvZmZzZXQ9IjAuNjk3MTE1IiBzdG9wLWNvbG9yPSIjRkZFQ0Y0Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+)](https://github.com/zzztzzzt/Lyra-AI)
+
+<br>
+<br>
+<img src="https://github.com/zzztzzzt/Amol-JS/blob/main/logo/logo.png" alt="amol-logo" style="height: 280px; width: auto;" />
+
 ### Amol-JS is a package for creating 3D UI Interaction & Beautiful 3D Scene.
 
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
