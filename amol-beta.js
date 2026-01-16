@@ -25,13 +25,5 @@ console.log(
     "%c🔭 You are using Amol.js\n⚖️ Version - 1.4 .251228",
     "font-weight: bold; font-size: 18px; background: linear-gradient(to right, #94d8ff, #70ffc4); color: transparent; background-clip: text; -webkit-background-clip: text;"
 );
-console.log(
-    "%cGitHub: github.com/zzztzzzt/Amol-JS",
-    "font-weight: bold; color: lightGray;"
-);
-console.log(
-    "%c🏹 Explore the places we've never been.",
-    "font-weight: bold; background-color: #94d8ff; color: transparent; background-clip: text; -webkit-background-clip: text;"
-);
 
 console.groupEnd();

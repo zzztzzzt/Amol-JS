@@ -204,29 +204,4 @@ export class AmolScene {
         if (amolObject.objectType === "button" || amolObject.objectType === "movie") this.listenerFuncMapMouseOver.set(mainMeshUuid, amolObject.getListenerFunc("mouseover"));
         if (amolObject.objectType === "button" || amolObject.objectType === "movie") this.listenerFuncMapNotMouseOver.set(mainMeshUuid, amolObject.getListenerFunc("notmouseover"));
     }
-
-    status() {
-        console.group("STATUS : amol-setup.js");
-
-        console.log("div:", this.div);
-        console.log("cssDiv:", this.cssDiv);
-        console.log("amolObjectList:", this.amolObjectList);
-        console.log("scene:", this.scene);
-        console.log("clock:", this.clock);
-        console.log("camera:", this.camera);
-        console.log("renderer:", this.renderer);
-        console.log("cssRenderer:", this.cssRenderer);
-        console.log("ambientLight:", this.ambientLight);
-        console.log("light:", this.light);
-        //console.log("controls", this.controls);
-        console.log("animateFuncList:", this.animateFuncList);
-        console.log("currentObject:", this.currentObject);
-        console.log("listenerFuncMapClick:", this.listenerFuncMapClick);
-        console.log("listenerFuncListClick:", this.listenerFuncListClick);
-        console.log("listenerFuncListMouseMove:", this.listenerFuncListMouseMove);
-        console.log("listenerFuncMapMouseOver:", this.listenerFuncMapMouseOver);
-        console.log("listenerFuncMapNotMouseOver:", this.listenerFuncMapNotMouseOver);
-
-        console.groupEnd();
-    }
 }
