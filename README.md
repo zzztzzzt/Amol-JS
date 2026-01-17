@@ -1,7 +1,5 @@
 # Amol-JS
 
-<br>
-
 ![GitHub last commit](https://img.shields.io/github/last-commit/zzztzzzt/AMOL-JS.svg)
 ![CodeQL](https://github.com/zzztzzzt/Amol-JS/actions/workflows/codeql.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zzztzzzt/AMOL-JS.svg)
