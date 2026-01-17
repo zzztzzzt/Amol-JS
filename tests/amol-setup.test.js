@@ -4,37 +4,36 @@ import { AmolScene } from '../AMOL3D/amol-setup-beta';
 
 // Simulate a WebGL Context (to prevent Three.js from throwing errors)
 vi.mock('three', async () => {
-    const actual = await vi.importActual('three');
+  const actual = await vi.importActual('three');
     
-    class MockWebGLRenderer {
+  class MockWebGLRenderer {
+    constructor() {
+      this.domElement = document.createElement('canvas');
+    }
+    setSize() {}
+    render() {}
+    dispose() {}
+  }
+  
+  return {
+    ...actual,
+    WebGLRenderer: MockWebGLRenderer,
+  };
+});
+  
+vi.mock('three/examples/jsm/renderers/CSS3DRenderer.js', () => {
+  return {
+    CSS3DRenderer: class {
       constructor() {
-        this.domElement = document.createElement('canvas');
+        this.domElement = document.createElement('div');
       }
       setSize() {}
       render() {}
-      dispose() {}
     }
-  
-    return {
-      ...actual,
-      WebGLRenderer: MockWebGLRenderer,
-    };
-  });
-  
-  vi.mock('three/examples/jsm/renderers/CSS3DRenderer.js', () => {
-    return {
-      CSS3DRenderer: class {
-        constructor() {
-          this.domElement = document.createElement('div');
-        }
-        setSize() {}
-        render() {}
-      }
-    };
-  });
+  };
+});
 
 describe('AmolScene Core Functionality Testing', () => {
-  
   // Prepare the HTML container before each test begins
   beforeEach(() => {
     document.body.innerHTML = `
@@ -48,31 +47,60 @@ describe('AmolScene Core Functionality Testing', () => {
     };
   });
 
-  it('scene and camera should be successfully set up', () => {
+  it('Basic components should be declared', () => {
     const basicScene = new AmolScene('webgl-container', 'css-container');
 
-    expect(basicScene.scene).toBeDefined();
+    expect(basicScene.scene).toBeInstanceOf(THREE.Scene);
+    expect(basicScene.camera).toBeInstanceOf(THREE.PerspectiveCamera);
     
-    expect(basicScene.camera.fov).toBe(20);
-    
-    const canvas = document.querySelector('canvas');
-    expect(canvas).not.toBeNull();
+    expect(basicScene.ambientLight).toBeDefined();
+    expect(basicScene.scene.children).toContain(basicScene.ambientLight);
+    expect(basicScene.scene.children).toContain(basicScene.light);
+
+    expect(basicScene.renderer).toBeDefined();
+    expect(basicScene.cssRenderer).toBeDefined();
   });
 
-  it('create-method should add AmolObject to ObjectList', async () => {
-    const basicScene = new AmolScene('webgl-container', 'css-container');
-  
-    const mockObject = {
-      objectType: 'button',
-      getMeshes: async () => ({ 
-        mainMesh: new THREE.Mesh() 
-      }),
-      getAnimateFunc: () => () => {},
-      getListenerFunc: () => () => {},
-    };
-  
-    await basicScene.create(mockObject);
+  it('renderer should be correctly mounted into DOM container', () => {
+    new AmolScene('webgl-container', 'css-container');
+
+    const webglDiv = document.getElementById('webgl-container');
+    const cssDiv = document.getElementById('css-container');
+
+    expect(webglDiv.querySelector('canvas')).not.toBeNull();
     
-    expect(basicScene.amolObjectList.length).toBe(1);
+    expect(cssDiv.children.length).toBeGreaterThan(0);
+  });
+
+  it('create-method should be able to create and register objects', async () => {
+    const basicScene = new AmolScene('webgl-container', 'css-container');
+    
+    const mockMesh = new THREE.Mesh();
+    mockMesh.uuid = 'test-mesh-uuid';
+
+    const mockAmolObject = {
+        objectType: 'button',
+        getMeshes: async () => ({ mainMesh: mockMesh }),
+        getAnimateFunc: () => () => {},
+        getListenerFunc: (type) => () => `handler-${type}`
+    };
+
+    await basicScene.create(mockAmolObject);
+
+    expect(basicScene.amolObjectList).toContain(mockAmolObject);
+
+    expect(basicScene.scene.children).toContain(mockMesh);
+
+    expect(basicScene.interactiveMeshes).toContain(mockMesh);
+
+    expect(basicScene.animateFuncList.length).toBe(1);
+
+    expect(basicScene.listenerFuncMapClick.has('test-mesh-uuid')).toBe(true);
+
+    expect(basicScene.listenerFuncListMouseMove.length).toBe(1);
+
+    expect(basicScene.listenerFuncMapMouseOver.has('test-mesh-uuid')).toBe(true);
+
+    expect(basicScene.listenerFuncMapNotMouseOver.has('test-mesh-uuid')).toBe(true);
   });
 });
