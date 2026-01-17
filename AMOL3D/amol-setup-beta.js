@@ -27,6 +27,8 @@ export class AmolScene {
         this.animateFuncList = animateFuncList;
         let currentObject = null;
         this.currentObject = currentObject;
+        let interactiveMeshes = [];
+        this.interactiveMeshes = interactiveMeshes;
 
         // 2. Scene
         const scene = new THREE.Scene();
@@ -65,6 +67,7 @@ export class AmolScene {
         this.light = light;
 
         // 8. Event Listeners
+        let mouse = new THREE.Vector2();
         let raycaster = new THREE.Raycaster();
 
         window.addEventListener('resize', () => {
@@ -93,7 +96,6 @@ export class AmolScene {
                 func(currentX, currentY);
             });
 
-            let mouse = new THREE.Vector2();
             mouse.x = currentX;
             mouse.y = currentY;
 
@@ -101,7 +103,7 @@ export class AmolScene {
             raycaster.setFromCamera(mouse, camera);
 
             // detect intersection of ray and object
-            let intersects = raycaster.intersectObjects(scene.children, true);
+            let intersects = raycaster.intersectObjects(interactiveMeshes, true);
 
             if (intersects.length > 0) {
                 // prevent the program from not executing notHover() when intersects.length > 0
@@ -191,6 +193,9 @@ export class AmolScene {
             Object.values(meshes).forEach(mesh => {
                 this.scene.add(mesh);
             });
+        }
+        if (meshes?.mainMesh) {
+            this.interactiveMeshes.push(meshes.mainMesh);
         }
 
         this.animateFuncList.push(amolObject.getAnimateFunc());
