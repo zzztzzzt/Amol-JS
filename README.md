@@ -14,7 +14,7 @@
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
 
 ![three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![vite](https://img.shields.io/badge/vite-9135FF?style=for-the-badge&logo=vite&logoColor=white)
+![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![vitest](https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
 Amol-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
