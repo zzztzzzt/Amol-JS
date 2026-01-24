@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import * as THREE from 'three';
-import { AmolScene } from '../src/AMOL3D/amol-setup-beta';
+import { AmolScene } from '@amol3d/amol-setup-beta';
 
 // Simulate a WebGL Context (to prevent Three.js from throwing errors)
 vi.mock('three', async () => {

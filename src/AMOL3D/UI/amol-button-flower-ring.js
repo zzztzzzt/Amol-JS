@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { noise } from '../utils/perlinNoise.js';
+
+import { noise } from '@utils/perlinNoise.js';
+import ringFlowerPink from '@models/ring-flower-pink.glb';
 
 export class ButtonFlowerRing {
     constructor(color = 0) {
@@ -9,7 +11,7 @@ export class ButtonFlowerRing {
 
         this.color = color;
         let colorTypeOne = {
-            "model-ring-flower-path": './src/AMOL3D/UI/models/ring-flower-pink.glb',
+            "model-ring-flower-path": ringFlowerPink,
         };
         let colorTypeTwo = {};
         let colorCustom = {};

@@ -1,16 +1,19 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+import torusInCubePink from '@models/torusInCube-pink.glb';
+import torusInCubeGold from '@models/torusInCube-gold.glb';
+
 export class ClickTrackingStellar {
     constructor(color = 0, boxCount = 10, spaceSize = 15) {
         // 1. Variables
         this.objectType = 'click-tracking';
         this.color = color;
         const colorTypeOne = {
-            "object-color-type": './src/AMOL3D/UI/models/torusInCube-pink.glb',
+            "object-color-type": torusInCubePink,
         };
         const colorTypeTwo = {
-            "object-color-type": './src/AMOL3D/UI/models/torusInCube-gold.glb',
+            "object-color-type": torusInCubeGold,
         };
         let colorCustom = {};
         const colorTypeList = [colorTypeOne, colorTypeTwo, colorCustom];

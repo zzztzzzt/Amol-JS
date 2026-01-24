@@ -1,4 +1,4 @@
-import { AmolScene } from "./AMOL3D/amol-setup-beta.js";
+import { AmolScene } from "@amol3d/amol-setup-beta.js";
 
 const setup = {
   jsVer: (divId, cssDivId) => {

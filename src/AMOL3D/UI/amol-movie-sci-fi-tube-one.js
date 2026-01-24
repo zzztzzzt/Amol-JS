@@ -1,7 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export class MovieRuinOne {
+import sciFiTubeOne from '@models/sci-fi-tube-one.glb';
+
+export class MovieSciFiTubeOne {
     constructor(color = 0) {
         // 1. Variables
         this.objectType = 'movie';
@@ -174,7 +176,7 @@ export class MovieRuinOne {
         return new THREE.Mesh(geometry, material);
     }
 
-    async loadModelAsync(GlbPath = "./src/AMOL3D/UI/models/sci-fi-tube-one.glb") {
+    async loadModelAsync(GlbPath = sciFiTubeOne) {
         const loader = new GLTFLoader();
         try {
             const gltf = await this.loadModel(loader, GlbPath);

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "useDefineForClassFields": true, 
+
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@amol3d/*": ["src/AMOL3D/*"],
+      "@utils/*": ["src/AMOL3D/utils/*"],
+      "@hdr/*": ["src/AMOL3D/UI/hdr/*"],
+      "@models/*": ["src/core/AMOL3D/UI/models/*"],
+      "@textures/*": ["src/core/AMOL3D/UI/textures/*"]
+    }
+  }
+  //,"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+}
