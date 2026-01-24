@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from 'vite'
 import { fileURLToPath } from 'node:url'
 
@@ -11,5 +12,9 @@ export default defineConfig({
       '@models': fileURLToPath(new URL('./src/AMOL3D/UI/models', import.meta.url)),
       '@textures': fileURLToPath(new URL('./src/AMOL3D/UI/textures', import.meta.url))
     }
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
   }
 })
