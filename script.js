@@ -1,8 +1,10 @@
 import * as THREE from "three";
-import * as AMOL from "./amol-beta";
+import { setup } from "./src/setup";
+import { ButtonFlowerRing } from "./src/components";
 
 
-const basicScene = AMOL.setup.jsVer("three-area", "three-area-css");
+
+const basicScene = setup.jsVer("three-area", "three-area-css");
 
 /*const envMap = await basicScene.loadEnvironment('/AMOL3D/UI/hdr/example_puresky_1k.hdr', 0, Math.PI * 5 / 9, 0);
 
@@ -17,5 +19,5 @@ movieObjOne.rotationSet(0, Math.PI / 12, 0);
 basicScene.create(movieObjOne);
 */
 
-const btn3d = new AMOL.ButtonFlowerRing();
+const btn3d = new ButtonFlowerRing();
 basicScene.create(btn3d);
