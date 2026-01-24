@@ -204,7 +204,7 @@ export class MovieWater {
 
         for (let i = 1; i <= FRAME_COUNT; i++) {
             const index = String(i).padStart(4, '0');
-            const url = `/AMOL3D/UI/textures/ocean/disp_${index}.exr`;
+            const url = `./src/AMOL3D/UI/textures/ocean/disp_${index}.exr`;
 
             exrLoader.load(url, (tex) => {
                 tex.wrapS = tex.wrapT = THREE.RepeatWrapping;

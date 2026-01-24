@@ -174,7 +174,7 @@ export class MovieRuinOne {
         return new THREE.Mesh(geometry, material);
     }
 
-    async loadModelAsync(GlbPath = "./AMOL3D/UI/models/sci-fi-tube-one.glb") {
+    async loadModelAsync(GlbPath = "./src/AMOL3D/UI/models/sci-fi-tube-one.glb") {
         const loader = new GLTFLoader();
         try {
             const gltf = await this.loadModel(loader, GlbPath);

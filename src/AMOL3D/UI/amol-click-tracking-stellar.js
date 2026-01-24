@@ -7,10 +7,10 @@ export class ClickTrackingStellar {
         this.objectType = 'click-tracking';
         this.color = color;
         const colorTypeOne = {
-            "object-color-type": './AMOL3D/UI/models/torusInCube-pink.glb',
+            "object-color-type": './src/AMOL3D/UI/models/torusInCube-pink.glb',
         };
         const colorTypeTwo = {
-            "object-color-type": './AMOL3D/UI/models/torusInCube-gold.glb',
+            "object-color-type": './src/AMOL3D/UI/models/torusInCube-gold.glb',
         };
         let colorCustom = {};
         const colorTypeList = [colorTypeOne, colorTypeTwo, colorCustom];

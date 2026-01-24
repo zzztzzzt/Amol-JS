@@ -9,7 +9,7 @@ export class ButtonFlowerRing {
 
         this.color = color;
         let colorTypeOne = {
-            "model-ring-flower-path": './AMOL3D/UI/models/ring-flower-pink.glb',
+            "model-ring-flower-path": './src/AMOL3D/UI/models/ring-flower-pink.glb',
         };
         let colorTypeTwo = {};
         let colorCustom = {};
