@@ -184,6 +184,17 @@ export class AltairScene {
     }
 
     async create(altairObject) {
+        if (altairObject.objectType === "object-type") {
+            console.error(`ERROR : you forgot to change ${ altairObject.constructor.name }.objectType after copying from base-template!`);
+            return;
+        }
+
+        const VALID_TYPES = new Set(["button", "click-tracking", "cursor-trail", "movie"]);
+        if (!VALID_TYPES.has(altairObject.objectType)) {
+            console.error(`ERROR : ${ altairObject.constructor.name }.objectType not valid!`);
+            return;
+        }
+
         this.altairObjectList.push(altairObject);
 
         const meshes = await altairObject.getMeshes();
@@ -199,6 +210,7 @@ export class AltairScene {
         }
 
         this.animateFuncList.push(altairObject.getAnimateFunc());
+
         if (altairObject.objectType === "button" || altairObject.objectType === "movie") {
             this.listenerFuncMapClick.set(mainMeshUuid, altairObject.getListenerFunc("click"));
         }

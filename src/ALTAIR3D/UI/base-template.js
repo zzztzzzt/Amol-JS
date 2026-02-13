@@ -81,7 +81,6 @@ export class BaseTemplate {
     }
     */
     
-
     async getMeshes() {
         //await this.loadModelAsync();
         return {
