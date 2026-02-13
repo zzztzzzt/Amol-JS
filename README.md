@@ -14,6 +14,14 @@
 
 IMPORTANT : This project is still in the development and testing stages, licensing terms may be updated in the future. Please don't do any commercial usage currently.
 
+## Project Dependencies Guide
+
+![three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![vitest](https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
+
+Altair-JS uses Three.js for 3D graphics rendering, Vite for development and bundling, and Vitest for unit testing. Three.js, Vite & Vitest licensed under the MIT License.
+
 ![1.3showcase](https://github.com/zzztzzzt/Altair-JS/blob/main/showcase/real-showcase-four.webp)
 <br><br>
 
@@ -152,9 +160,10 @@ basicScene.create(movieObjOne);
 
 ## Project Dependencies Details
 
-![three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![vitest](https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
-
-Altair-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.  
 Three.js License : [https://github.com/mrdoob/three.js/blob/dev/LICENSE](https://github.com/mrdoob/three.js/blob/dev/LICENSE)
+<br>
+
+Vite License : [https://github.com/vitejs/vite/blob/main/LICENSE](https://github.com/vitejs/vite/blob/main/LICENSE)
+<br>
+
+Vitest License : [https://github.com/vitest-dev/vitest/blob/main/LICENSE](https://github.com/vitest-dev/vitest/blob/main/LICENSE)
