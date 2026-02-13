@@ -273,7 +273,7 @@ export class CursorTrailStellar {
     }
 
     status() {
-        console.group("STATUS : amol-cursor-trail-stellar.js");
+        console.group("STATUS : altair-cursor-trail-stellar.js");
 
         console.log("objectType:", this.objectType);
         console.log("color:", this.color);

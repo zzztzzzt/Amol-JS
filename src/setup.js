@@ -1,10 +1,10 @@
-import { AmolScene } from "@amol3d/amol-setup-beta.js";
+import { AltairScene } from "@altair3d/altair-setup-beta.js";
 
 const setup = {
   jsVer: (divId, cssDivId) => {
-    return new AmolScene(divId, cssDivId);
+    return new AltairScene(divId, cssDivId);
   },
-  amolVue: () => {}
+  altairVue: () => {}
 };
 
-export { setup, AmolScene };
+export { setup, AltairScene };

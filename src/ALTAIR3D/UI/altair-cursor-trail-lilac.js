@@ -158,7 +158,7 @@ export class CursorTrailLilac {
     }
 
     status() {
-        console.group("STATUS : amol-cursor-trail-lilac.js");
+        console.group("STATUS : altair-cursor-trail-lilac.js");
 
 
 

@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import * as THREE from 'three';
-import { AmolScene } from '@amol3d/amol-setup-beta';
+import { AltairScene } from '@altair3d/altair-setup-beta';
 
 // Simulate a WebGL Context (to prevent Three.js from throwing errors)
 vi.mock('three', async () => {
@@ -33,7 +33,7 @@ vi.mock('three/examples/jsm/renderers/CSS3DRenderer.js', () => {
   };
 });
 
-describe('AmolScene Core Functionality Testing', () => {
+describe('AltairScene Core Functionality Testing', () => {
   // Prepare the HTML container before each test begins
   beforeEach(() => {
     document.body.innerHTML = `
@@ -48,7 +48,7 @@ describe('AmolScene Core Functionality Testing', () => {
   });
 
   it('Basic components should be declared', () => {
-    const basicScene = new AmolScene('webgl-container', 'css-container');
+    const basicScene = new AltairScene('webgl-container', 'css-container');
 
     expect(basicScene.scene).toBeInstanceOf(THREE.Scene);
     expect(basicScene.camera).toBeInstanceOf(THREE.PerspectiveCamera);
@@ -62,7 +62,7 @@ describe('AmolScene Core Functionality Testing', () => {
   });
 
   it('renderer should be correctly mounted into DOM container', () => {
-    new AmolScene('webgl-container', 'css-container');
+    new AltairScene('webgl-container', 'css-container');
 
     const webglDiv = document.getElementById('webgl-container');
     const cssDiv = document.getElementById('css-container');
@@ -73,21 +73,21 @@ describe('AmolScene Core Functionality Testing', () => {
   });
 
   it('create-method should be able to create and register objects', async () => {
-    const basicScene = new AmolScene('webgl-container', 'css-container');
+    const basicScene = new AltairScene('webgl-container', 'css-container');
     
     const mockMesh = new THREE.Mesh();
     mockMesh.uuid = 'test-mesh-uuid';
 
-    const mockAmolObject = {
+    const mockAltairObject = {
         objectType: 'button',
         getMeshes: async () => ({ mainMesh: mockMesh }),
         getAnimateFunc: () => () => {},
         getListenerFunc: (type) => () => `handler-${type}`
     };
 
-    await basicScene.create(mockAmolObject);
+    await basicScene.create(mockAltairObject);
 
-    expect(basicScene.amolObjectList).toContain(mockAmolObject);
+    expect(basicScene.altairObjectList).toContain(mockAltairObject);
 
     expect(basicScene.scene.children).toContain(mockMesh);
 

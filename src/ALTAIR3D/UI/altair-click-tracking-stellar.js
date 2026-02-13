@@ -233,7 +233,7 @@ export class ClickTrackingStellar {
     }
 
     status() {
-        console.group("STATUS : amol-click-tracking-stellar.js");
+        console.group("STATUS : altair-click-tracking-stellar.js");
 
         console.log("objectType:", this.objectType);
         console.log("color:", this.color);

@@ -3,7 +3,7 @@ import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRe
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 
-export class AmolScene {
+export class AltairScene {
     constructor(divId, cssDivId) {
         const div = document.getElementById(divId);
         this.div = div;
@@ -11,8 +11,8 @@ export class AmolScene {
         this.cssDiv = cssDiv;
 
         // 1. Variables
-        let amolObjectList = [];
-        this.amolObjectList = amolObjectList;
+        let altairObjectList = [];
+        this.altairObjectList = altairObjectList;
         let listenerFuncMapClick = new Map();
         this.listenerFuncMapClick = listenerFuncMapClick;
         let listenerFuncListClick = [];
@@ -109,10 +109,10 @@ export class AmolScene {
                 // prevent the program from not executing notHover() when intersects.length > 0
                 if (currentObject != null)  listenerFuncMapNotMouseOver.get(currentObject.mainMesh.uuid)();
 
-                for (const key in amolObjectList) {
-                    if (findRoot(intersects[0].object, amolObjectList[key].mainMesh)) {
-                        currentObject = amolObjectList[key];
-                        if (amolObjectList[key].objectType != 'click-tracking' && amolObjectList[key].objectType != 'input' && amolObjectList[key].objectType != 'cursor-trail') document.body.style.cursor = 'pointer';
+                for (const key in altairObjectList) {
+                    if (findRoot(intersects[0].object, altairObjectList[key].mainMesh)) {
+                        currentObject = altairObjectList[key];
+                        if (altairObjectList[key].objectType != 'click-tracking' && altairObjectList[key].objectType != 'input' && altairObjectList[key].objectType != 'cursor-trail') document.body.style.cursor = 'pointer';
                         else document.body.style.cursor = 'auto';
 
                         listenerFuncMapMouseOver.get(currentObject.mainMesh.uuid)();
@@ -183,10 +183,10 @@ export class AmolScene {
         });
     }
 
-    async create(amolObject) {
-        this.amolObjectList.push(amolObject);
+    async create(altairObject) {
+        this.altairObjectList.push(altairObject);
 
-        const meshes = await amolObject.getMeshes();
+        const meshes = await altairObject.getMeshes();
         let mainMeshUuid = meshes.mainMesh?.uuid;
         //console.log(meshes);
         if (meshes) {
@@ -198,15 +198,15 @@ export class AmolScene {
             this.interactiveMeshes.push(meshes.mainMesh);
         }
 
-        this.animateFuncList.push(amolObject.getAnimateFunc());
-        if (amolObject.objectType === "button" || amolObject.objectType === "movie") {
-            this.listenerFuncMapClick.set(mainMeshUuid, amolObject.getListenerFunc("click"));
+        this.animateFuncList.push(altairObject.getAnimateFunc());
+        if (altairObject.objectType === "button" || altairObject.objectType === "movie") {
+            this.listenerFuncMapClick.set(mainMeshUuid, altairObject.getListenerFunc("click"));
         }
         else {
-            this.listenerFuncListClick.push(amolObject.getListenerFunc("click"));
+            this.listenerFuncListClick.push(altairObject.getListenerFunc("click"));
         }
-        this.listenerFuncListMouseMove.push(amolObject.getListenerFunc("mousemove"));
-        if (amolObject.objectType === "button" || amolObject.objectType === "movie") this.listenerFuncMapMouseOver.set(mainMeshUuid, amolObject.getListenerFunc("mouseover"));
-        if (amolObject.objectType === "button" || amolObject.objectType === "movie") this.listenerFuncMapNotMouseOver.set(mainMeshUuid, amolObject.getListenerFunc("notmouseover"));
+        this.listenerFuncListMouseMove.push(altairObject.getListenerFunc("mousemove"));
+        if (altairObject.objectType === "button" || altairObject.objectType === "movie") this.listenerFuncMapMouseOver.set(mainMeshUuid, altairObject.getListenerFunc("mouseover"));
+        if (altairObject.objectType === "button" || altairObject.objectType === "movie") this.listenerFuncMapNotMouseOver.set(mainMeshUuid, altairObject.getListenerFunc("notmouseover"));
     }
 }

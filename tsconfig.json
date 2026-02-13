@@ -14,11 +14,11 @@
 
     "baseUrl": ".",
     "paths": {
-      "@amol3d/*": ["src/AMOL3D/*"],
-      "@utils/*": ["src/AMOL3D/utils/*"],
-      "@hdr/*": ["src/AMOL3D/UI/hdr/*"],
-      "@models/*": ["src/core/AMOL3D/UI/models/*"],
-      "@textures/*": ["src/core/AMOL3D/UI/textures/*"]
+      "@altair3d/*": ["src/ALTAIR3D/*"],
+      "@utils/*": ["src/ALTAIR3D/utils/*"],
+      "@hdr/*": ["src/ALTAIR3D/UI/hdr/*"],
+      "@models/*": ["src/core/ALTAIR3D/UI/models/*"],
+      "@textures/*": ["src/core/ALTAIR3D/UI/textures/*"]
     }
   }
   //,"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

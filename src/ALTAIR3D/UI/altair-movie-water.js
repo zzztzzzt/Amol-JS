@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { EXRLoader } from 'three/addons/loaders/EXRLoader.js';
 
 export class MovieWater {
-    constructor(amolScene, hdrTexture, color = 0) {
+    constructor(altairScene, hdrTexture, color = 0) {
         // 1. Variables
         this.objectType = 'movie';
 
@@ -12,8 +12,8 @@ export class MovieWater {
         this.colorTypeList = [colorTypeOne, colorTypeTwo, colorCustom];
 
         // generate CubeCamera to make real-time water reflection
-        this.scene = amolScene.scene;
-        this.renderer = amolScene.renderer;
+        this.scene = altairScene.scene;
+        this.renderer = altairScene.renderer;
 
         const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(1536, {
             format: THREE.RGBAFormat,
@@ -37,8 +37,8 @@ export class MovieWater {
             uMix: { value: 0.0 },
             uHeight: { value: 2.0 },
         
-            uLightDir: { value: amolScene.light.position.clone().normalize() },
-            uCameraPos: { value: amolScene.camera.position.clone() },
+            uLightDir: { value: altairScene.light.position.clone().normalize() },
+            uCameraPos: { value: altairScene.camera.position.clone() },
         
             uEnvMap: { value: hdrTexture },
             uDynamicEnvMap: { value: cubeRenderTarget.texture },
@@ -204,7 +204,7 @@ export class MovieWater {
 
         for (let i = 1; i <= FRAME_COUNT; i++) {
             const index = String(i).padStart(4, '0');
-            const url = `./src/AMOL3D/UI/textures/ocean/disp_${index}.exr`;
+            const url = `./src/ALTAIR3D/UI/textures/ocean/disp_${index}.exr`;
 
             exrLoader.load(url, (tex) => {
                 tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
@@ -240,16 +240,16 @@ export class MovieWater {
                 uniforms.uMix.value = mix;
             }
 
-            uniforms.uCameraPos.value.copy(amolScene.camera.position);
+            uniforms.uCameraPos.value.copy(altairScene.camera.position);
 
             // update CubeCamera to capture instant reflections
             if (this.scene && this.renderer) {
-                this.cubeCamera.position.x = amolScene.camera.position.x;
-                this.cubeCamera.position.z = amolScene.camera.position.z;
+                this.cubeCamera.position.x = altairScene.camera.position.x;
+                this.cubeCamera.position.z = altairScene.camera.position.z;
 
                 // calculate the camera's height relative to the water surface, then mirror it below the water surface
                 const waterY = this.mainMesh.position.y;
-                const cameraHeightAboveWater = amolScene.camera.position.y - waterY;
+                const cameraHeightAboveWater = altairScene.camera.position.y - waterY;
                 this.cubeCamera.position.y = waterY - cameraHeightAboveWater;
 
                 // Temporarily hide water surface, to avoid reflecting itself
