@@ -20,7 +20,9 @@ IMPORTANT : This project is still in the development and testing stages, licensi
 ![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![vitest](https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
-Altair-JS uses Three.js for 3D graphics rendering, Vite for development and bundling, and Vitest for unit testing. Three.js, Vite & Vitest licensed under the MIT License.
+Altair-JS uses Three.js for 3D graphics rendering. Three.js licensed under the MIT License.
+
+Altair-JS uses Vite for development, and Vitest for unit testing. Vite & Vitest licensed under the MIT License.
 
 ![1.3showcase](https://github.com/zzztzzzt/Altair-JS/blob/main/showcase/real-showcase-four.webp)
 <br><br>
