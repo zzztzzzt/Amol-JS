@@ -15,6 +15,13 @@ describe('ButtonGolden Core Functionality Testing', () => {
     expect(button.particles).toBeInstanceOf(THREE.Group);
   });
 
+  it('constructor with color 1 uses second color set', () => {
+    const button = new ButtonGolden(1);
+    expect(button.objectType).toBe('button');
+    expect(button.mainMesh).toBeInstanceOf(THREE.Mesh);
+    expect(button.colorTypeList[1]).toBeDefined();
+  });
+
   it('getMeshes should return all mesh references', async () => {
     const button = new ButtonGolden(0);
     const meshes = await button.getMeshes();
@@ -48,6 +55,14 @@ describe('ButtonGolden Core Functionality Testing', () => {
     expect(button.ringTwo.scale.toArray()).toEqual([2, 2, 2]);
     expect(button.ringThree.scale.toArray()).toEqual([2, 2, 2]);
     expect(button.particles.scale.toArray()).toEqual([2, 2, 2]);
+  });
+
+  it('scaleSet and positionSet should delegate to changeScale/changePosition', () => {
+    const button = new ButtonGolden(0);
+    button.positionSet(10, 20, 30);
+    expect(button.mainMesh.position.toArray()).toEqual([10, 20, 30]);
+    button.scaleSet(3, 3, 3);
+    expect(button.mainMesh.scale.toArray()).toEqual([3, 3, 3]);
   });
 
   it('listener getters should return expected handlers', () => {

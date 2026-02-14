@@ -33,6 +33,14 @@ vi.mock('three/examples/jsm/renderers/CSS3DRenderer.js', () => {
   };
 });
 
+vi.mock('three/addons/loaders/RGBELoader.js', () => ({
+  RGBELoader: class {
+    load(path, onLoad) {
+      if (onLoad) onLoad({});
+    }
+  },
+}));
+
 describe('AltairScene Core Functionality Testing', () => {
   // Prepare the HTML container before each test begins
   beforeEach(() => {
@@ -102,5 +110,59 @@ describe('AltairScene Core Functionality Testing', () => {
     expect(basicScene.listenerFuncMapMouseOver.has('test-mesh-uuid')).toBe(true);
 
     expect(basicScene.listenerFuncMapNotMouseOver.has('test-mesh-uuid')).toBe(true);
+  });
+
+  it('create-method with click-tracking should use listenerFuncListClick not map', async () => {
+    const basicScene = new AltairScene('webgl-container', 'css-container');
+    const mockMesh = new THREE.Mesh();
+    mockMesh.uuid = 'tracking-uuid';
+    const clickHandler = vi.fn();
+    const mockAltairObject = {
+      objectType: 'click-tracking',
+      getMeshes: async () => ({ mainMesh: mockMesh }),
+      getAnimateFunc: () => () => {},
+      getListenerFunc: (type) => (type === 'click' ? clickHandler : () => {}),
+    };
+
+    await basicScene.create(mockAltairObject);
+
+    expect(basicScene.listenerFuncMapClick.has('tracking-uuid')).toBe(false);
+    expect(basicScene.listenerFuncListClick).toContain(clickHandler);
+  });
+
+  it('create-method should reject object-type and invalid objectType', async () => {
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const basicScene = new AltairScene('webgl-container', 'css-container');
+
+    const objectTypeObj = {
+      objectType: 'object-type',
+      getMeshes: async () => ({}),
+      getAnimateFunc: () => () => {},
+      getListenerFunc: () => () => {},
+      constructor: { name: 'FakeObject' },
+    };
+    await basicScene.create(objectTypeObj);
+    expect(basicScene.altairObjectList).not.toContain(objectTypeObj);
+    expect(consoleSpy).toHaveBeenCalled();
+
+    const invalidObj = {
+      objectType: 'invalid',
+      getMeshes: async () => ({}),
+      getAnimateFunc: () => () => {},
+      getListenerFunc: () => () => {},
+      constructor: { name: 'FakeObject' },
+    };
+    await basicScene.create(invalidObj);
+    expect(basicScene.altairObjectList).not.toContain(invalidObj);
+
+    consoleSpy.mockRestore();
+  });
+
+  it('loadEnvironment should set scene environment and background on success', async () => {
+    const basicScene = new AltairScene('webgl-container', 'css-container');
+    const result = await basicScene.loadEnvironment('/fake.hdr', 0, 0, 0);
+    expect(result).toBeDefined();
+    expect(basicScene.scene.environment).toBeDefined();
+    expect(basicScene.scene.background).toBeDefined();
   });
 });
