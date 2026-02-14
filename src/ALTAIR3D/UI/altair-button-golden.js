@@ -1,42 +1,40 @@
 import * as THREE from 'three';
-//import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
 
 export class ButtonGolden {
-    constructor(name, color = 0, viewOffset = 'none') {
+    constructor(color = 0) {
         // 1. Variables
-        this.name = name;
         this.objectType = 'button';
-        this.viewOffset = viewOffset;
-        let positionNum = [0, 0, 0];
-        let scaleNum = 1.0;
-        let chooseColor = color;
+
+        this.color = color;
         const colorTypeOne = [0xffffff, 0xffca33, 0xff9760, 0xc3c3c3, 0xf6e58d, 0xffdb5f];
         const colorTypeTwo = [0xffffff, 0x9bf1d9, 0x00905b, 0x8fcbc9, 0x1fa068, 0x5bc1a5];
-        const colorTypeThree = [];
-        const colorList = [colorTypeOne, colorTypeTwo, colorTypeThree];
+        let colorCustom = {};
+        this.colorTypeList = [colorTypeOne, colorTypeTwo, colorCustom];
+
+        let scaleNum = 1.0;
         let cubeStatus = "origin";
         const rotationAxis = new THREE.Vector3(1, 1, 0).normalize();
         const quaternion = new THREE.Quaternion().setFromAxisAngle(rotationAxis, Math.PI / 180);
 
-        // 2. Mesh
+        // 2. Meshes
         const sphereGeometry = new THREE.SphereGeometry(1.6, 32, 32);
-        const sphereMaterial = new THREE.MeshMatcapMaterial({ color: colorList[chooseColor][0], visible: false });
+        const sphereMaterial = new THREE.MeshMatcapMaterial({ color: this.colorTypeList[color][0], visible: false });
         const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         this.mainMesh = sphere;
 
         const geometry = new THREE.TorusGeometry(1.5, 0.015, 64, 100);
-        const material = new THREE.MeshPhongMaterial({ color: colorList[chooseColor][1] });
+        const material = new THREE.MeshPhongMaterial({ color: this.colorTypeList[color][1] });
         const ring = new THREE.Mesh(geometry, material);
         this.ring = ring;
 
         const geometryTwo = new THREE.TorusGeometry(1.5, 0.005, 64, 100);
-        const materialTwo = new THREE.MeshPhongMaterial({ color: colorList[chooseColor][2] });
+        const materialTwo = new THREE.MeshPhongMaterial({ color: this.colorTypeList[color][2] });
         const ringTwo = new THREE.Mesh(geometryTwo, materialTwo);
         ringTwo.rotation.y = Math.PI / 2;
         this.ringTwo = ringTwo;
 
         const geometryThree = new THREE.TorusGeometry(1.5, 0.0075, 64, 100);
-        const materialThree = new THREE.MeshPhongMaterial({ color: colorList[chooseColor][3] });
+        const materialThree = new THREE.MeshPhongMaterial({ color: this.colorTypeList[color][3] });
         const ringThree = new THREE.Mesh(geometryThree, materialThree);
         ringThree.rotation.x = Math.PI / 2;
         this.ringThree = ringThree;
@@ -48,8 +46,8 @@ export class ButtonGolden {
         let particles = new THREE.Group();
 
         // define start color and end color
-        let colorStart = new THREE.Color( colorList[chooseColor][4] );
-        let colorEnd = new THREE.Color( colorList[chooseColor][5] );
+        let colorStart = new THREE.Color( this.colorTypeList[color][4] );
+        let colorEnd = new THREE.Color( this.colorTypeList[color][5] );
         // color interpolation step size
         let colorStep = 1 / (particleCount / 10); // interpolate every 10 particles
 
@@ -83,21 +81,19 @@ export class ButtonGolden {
         }
         this.particles = particles;
 
-        // 3. Light
+        // 3. Lights
 
-        // 4. Event Listener
-        function whenMouseOver() {
+        // 4. Event Listeners
+        this.whenMouseOver = () => {
             if (cubeStatus != "max" && cubeStatus != "smaller") cubeStatus = "bigger";
-        }
-        this.whenMouseOver = whenMouseOver;
+        };
 
-        function notMouseOver() {
+        this.notMouseOver = () => {
             if (cubeStatus != "max" && cubeStatus != "smaller") {
                 cubeSize = 1.2;
                 cubeStatus = "origin";
             }
-        }
-        this.notMouseOver = notMouseOver;
+        };
 
         this.whenClick = () => {
             cubeSize = 0.6;
@@ -106,17 +102,14 @@ export class ButtonGolden {
 
         this.whenMouseMove = (x, y) => {};
 
-        let customizeWhenMouseOver = () => {};
-        this.customizeWhenMouseOver = customizeWhenMouseOver;
+        this.customizeWhenMouseOver = () => {};
 
-        let customizeNotMouseOver = () => {};
-        this.customizeNotMouseOver = customizeNotMouseOver;
+        this.customizeNotMouseOver = () => {};
 
-        let customizeWhenClick = () => {};
-        this.customizeWhenClick = customizeWhenClick;
+        this.customizeWhenClick = () => {};
 
-        // 5.Animate
-        function animateFunc() {
+        // 5. Animation
+        this.animateFunc = () => {
             ring.quaternion.multiplyQuaternions(quaternion, ring.quaternion);
             ringTwo.rotation.y += 0.01;
             ringThree.rotation.x -= 0.01;
@@ -160,10 +153,9 @@ export class ButtonGolden {
                     );
                 }
             });
-        }
-        this.animateFunc = animateFunc;
+        };
 
-        // 10.Function
+        // 6. Functions
         function startScaling() {
             setTimeout(() => {
                 cubeStatus = "max";
@@ -220,22 +212,22 @@ export class ButtonGolden {
         this.changePosition = changePosition;
 
         //function for scale
-        function changeScale(scale) {
-            scaleNum = scale;
-            this.mainMesh.scale.set(scale, scale, scale);
-            this.ring.scale.set(scale, scale, scale);
-            this.ringTwo.scale.set(scale, scale, scale);
-            this.ringThree.scale.set(scale, scale, scale);
-            this.particles.scale.set(scale, scale, scale);
+        function changeScale(x, y, z) {
+            if ( x === y && y === z ) scaleNum = x;
+
+            this.mainMesh.scale.set(x, y, z);
+            this.ring.scale.set(x, y, z);
+            this.ringTwo.scale.set(x, y, z);
+            this.ringThree.scale.set(x, y, z);
+            this.particles.scale.set(x, y, z);
         }
         this.changeScale = changeScale;
     }
-
-    // 11.Export
-    //tools
+    
     async getMeshes() {
         //await this.loadModelAsync();
         return {
+            // main mesh must be named "this.mainMesh", for raycaster judging.
             mainMesh: this.mainMesh,
             ring: this.ring,
             ringTwo: this.ringTwo,
@@ -262,4 +254,16 @@ export class ButtonGolden {
             return this.notMouseOver;
         }
     }
+
+    colorSet(color) {}
+
+    scaleSet(x, y, z) {
+        this.changeScale(x, y, z);
+    }
+
+    positionSet(x, y, z) {
+        this.changePosition(x, y,z);
+    }
+
+    rotationSet(x, y, z) {}
 }

@@ -16,6 +16,8 @@ IMPORTANT : This project is still in the development and testing stages, licensi
 
 ## Project Dependencies Guide
 
+**[ for Dependencies Details please see the end of this README ]**
+
 ![three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
 ![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![vitest](https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
